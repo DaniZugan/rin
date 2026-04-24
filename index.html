@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RIN – Računalništvo in informatika</title>
+  <meta name="description" content="Portal projektov RAČek, B-RIN, MARiNKA in KataRINa." />
+  <link rel="icon" type="image/png" href="assets/Slike/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+</head>
+<body>
+
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="index.html" class="brand">
+      <img src="assets/Slike/favicon.png" alt="Ikona Računalništvo in informatika">
+      <span class="brand-text">
+        <span class="brand-title">Računalništvo in informatika</span>
+        <span class="brand-sub">Skupen portal projektov in gradiv</span>
+      </span>
+    </a>
+
+    <nav class="main-nav">
+      <a class="nav-pill" href="index.html">Domov</a>
+
+      <div class="dropdown">
+        <button class="dropbtn nav-pill" aria-haspopup="true" aria-expanded="false">
+          <span>Projekti</span>
+          <svg class="chev" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 7.5 10 12.5 15 7.5"/></svg>
+        </button>
+        <div class="dropdown-menu">
+          <a href="racek.html">RAČek</a>
+          <a href="brin.html">B-RIN</a>
+          <a href="marinka.html">MARiNKA</a>
+          <a href="katarina.html">KataRINa</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn nav-pill" aria-haspopup="true" aria-expanded="false">
+          <span>Gradivo</span>
+          <svg class="chev" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 7.5 10 12.5 15 7.5"/></svg>
+        </button>
+        <div class="dropdown-menu">
+          <a href="#">Učni cilji</a>
+          <a href="#">Učni scenariji</a>
+          <a href="#">Katalog znanja</a>
+        </div>
+      </div>
+
+      <a class="nav-pill" href="index.html#o-portalu">O nas</a>
+      <a class="nav-pill" href="#kontakt">Kontakt</a>
+    </nav>
+
+    <button class="menu-btn" aria-label="Odpri meni">☰</button>
+  </div>
+
+  <div class="mobile-menu">
+    <a href="index.html">Domov</a>
+
+    <div class="mobile-dropdown-title">
+      <span>Projekti</span>
+      <svg class="chev" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 7.5 10 12.5 15 7.5"/></svg>
+    </div>
+    <div class="mobile-submenu">
+      <a href="racek.html">RAČek</a>
+      <a href="brin.html">B-RIN</a>
+      <a href="marinka.html">MARiNKA</a>
+      <a href="katarina.html">KataRINa</a>
+    </div>
+
+    <div class="mobile-dropdown-title">
+      <span>Gradivo</span>
+      <svg class="chev" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 7.5 10 12.5 15 7.5"/></svg>
+    </div>
+    <div class="mobile-submenu">
+      <a href="#">Učni cilji</a>
+      <a href="#">Učni scenariji</a>
+      <a href="#">Katalog znanja</a>
+    </div>
+
+    <a href="index.html#o-portalu">O nas</a>
+    <a href="#kontakt">Kontakt</a>
+  </div>
+</header>
+
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Računalništvo in informatika v slovenskih šolah</p>
+        <h1>Spletna stran projektov RIN</h1>
+        <p class="lead">rin.si združuje projekte RAČek, B-RIN, MARiNKA in KataRINa ter omogoča pregled ključnih informacij, projektnih poudarkov in nadaljnjih vsebin za posamezna področja.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#projekti">Poglej projekte</a>
+          <a class="btn secondary" href="#o-portalu">Preberi več</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-photo">
+          <img src="assets/Slike/hero-teacher-students-1.png" alt="">
+        </div>
+        <div class="hero-photo">
+          <img src="assets/Slike/hero-laptop-desk.jpg" alt="">
+        </div>
+        <div class="hero-photo large">
+          <img src="assets/Slike/hero-children-laptop.jpg" alt="">
+          <div class="hero-badge">4 projekti</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projekti" class="projects wrap">
+    <div class="section-head">
+      <p class="eyebrow">Projekti</p>
+      <h2>Pregled projektov</h2>
+    </div>
+
+    <div class="project-grid">
+      <article class="project-card">
+        <div class="project-top racek"><a href="racek.html"><img src="assets/Slike/logo-racek.png" alt="Logotip projekta RAČek"></a></div>
+        <h3>RAČek</h3>
+        <p>Projekt krepi digitalne kompetence in temeljna znanja računalništva in informatike z razvijanjem računalniškega mišljenja od vrtca do 5. razreda osnovne šole.</p>
+        <div class="card-actions"><a class="btn secondary" href="racek.html">Več o projektu</a></div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-top brin"><a href="brin.html"><img src="assets/Slike/logo-brin.png" alt="Logotip projekta B-RIN"></a></div>
+        <h3>B-RIN</h3>
+        <p>Projekt vključuje vrtce in osnovne šole ter povezuje razvoj učnih scenarijev, kataloga temeljnih vsebin RIN in didaktičnih priporočil za najmlajše učeče se.</p>
+        <div class="card-actions"><a class="btn secondary" href="brin.html">Več o projektu</a></div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-top marinka"><a href="marinka.html"><img src="assets/Slike/logo-marinka.png" alt="Logotip projekta MARiNKA"></a></div>
+        <h3>MARiNKA</h3>
+        <p>Projekt naslavlja sistemsko vključevanje temeljnih vsebin RIN v 6.–9. razred osnovne šole ter razvoj vzorčnih scenarijev, vrednotenja znanja in učeče se skupnosti.</p>
+        <div class="card-actions"><a class="btn secondary" href="marinka.html">Več o projektu</a></div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-top katarina"><a href="katarina.html"><img src="assets/Slike/logo-katarina.png" alt="Logotip projekta KataRINa"></a></div>
+        <h3>KataRINa</h3>
+        <p>Projekt je usmerjen v srednješolsko izobraževanje ter uvajanje temeljnih vsebin računalništva in informatike za boljšo digitalno pismenost mladih.</p>
+        <div class="card-actions"><a class="btn secondary" href="katarina.html">Več o projektu</a></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="o-portalu" class="about">
+    <div class="wrap about-grid">
+      <div>
+        <p class="eyebrow">O nas</p>
+        <h2>Skupen prostor za razvoj RIN vsebin</h2>
+        <p>Portal združuje projekte, gradiva in razvojne usmeritve, povezane z vključevanjem temeljnih vsebin računalništva in informatike v slovenski vzgojno-izobraževalni prostor.</p>
+        <p>Zasnova omogoča preprosto nadaljnjo nadgradnjo z dodatnimi podstranmi, katalogi vsebin, učnimi cilji, gradivi in drugimi vsebinami.</p>
+      </div>
+      <div class="stats-visual">
+        <div class="stat-card">
+          <div class="stat-icon icon-projects" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="5" width="6" height="7" rx="1.5"></rect>
+              <rect x="14" y="5" width="6" height="7" rx="1.5"></rect>
+              <rect x="4" y="14" width="6" height="5" rx="1.5"></rect>
+              <rect x="14" y="14" width="6" height="5" rx="1.5"></rect>
+            </svg>
+          </div>
+          <div class="stat-content">
+            <strong data-count="4">0</strong>
+            <span>projekti</span>
+            <small>Povezani v skupen portal RIN.</small>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon icon-teachers" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="3.2"></circle>
+              <path d="M5.5 19c1.7-3 4-4.5 6.5-4.5s4.8 1.5 6.5 4.5"></path>
+              <path d="M18.5 6.5h2.5v2.5"></path>
+            </svg>
+          </div>
+          <div class="stat-content">
+            <strong data-count="78">0</strong>
+            <span>učiteljev</span>
+            <small>Vključenih strokovnih delavcev.</small>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon icon-students" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 10.5 12 6l9 4.5-9 4.5-9-4.5Z"></path>
+              <path d="M7 12.5V16c0 .8 2.2 2 5 2s5-1.2 5-2v-3.5"></path>
+            </svg>
+          </div>
+          <div class="stat-content">
+            <strong data-count="145">0</strong>
+            <span>učencev</span>
+            <small>Učečih se vključenih v aktivnosti.</small>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon icon-posts" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 4h8l4 4v12H7z"></path>
+              <path d="M15 4v4h4"></path>
+              <path d="M10 12h6M10 15h6M10 18h4"></path>
+            </svg>
+          </div>
+          <div class="stat-content">
+            <strong data-count="36">0</strong>
+            <span>objav</span>
+            <small>Gradiv, objav in pomembnih vsebin.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="footer-strip-section wrap">
+    <div class="footer-strip-box">
+      <img src="assets/Slike/footer-strip.png" alt="Logotipi financerjev">
+    </div>
+  </section>
+</main>
+
+
+<footer id="kontakt" class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <h3>Računalništvo in informatika</h3>
+      <p>Portal povezuje projekte RAČek, B-RIN, MARiNKA in KataRINa ter podpira razvoj temeljnih vsebin računalništva in informatike v slovenskem vzgojno-izobraževalnem prostoru.</p>
+    </div>
+    <div>
+      <h4>Projekti</h4>
+      <ul>
+        <li><a href="racek.html">RAČek</a></li>
+        <li><a href="brin.html">B-RIN</a></li>
+        <li><a href="marinka.html">MARiNKA</a></li>
+        <li><a href="katarina.html">KataRINa</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Gradivo</h4>
+      <ul>
+        <li><a href="#">Učni cilji</a></li>
+        <li><a href="#">Učni scenariji</a></li>
+        <li><a href="#">Katalog znanja</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Kontakt</h4>
+      <p>Tukaj lahko dodaš uradni kontakt, e-pošto ali naslov.</p>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>© 2026 Računalništvo in informatika</p>
+    <a href="#top">Nazaj na vrh</a>
+  </div>
+</footer>
+
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="script.js"></script>
+</body>
+</html>

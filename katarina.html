@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KataRINa – Računalništvo in informatika</title>
+  <meta name="description" content="Projekt je usmerjen v srednješolsko izobraževanje ter uvajanje temeljnih vsebin računalništva in informatike za boljšo digitalno pismenost mladih." />
+  <link rel="icon" type="image/png" href="assets/Slike/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="index.html" class="brand">
+      <img src="assets/Slike/favicon.png" alt="Ikona Računalništvo in informatika">
+      <span class="brand-text">
+        <span class="brand-title">Računalništvo in informatika</span>
+        <span class="brand-sub">Skupen portal projektov in gradiv</span>
+      </span>
+    </a>
+
+    <nav class="main-nav">
+      <a class="nav-pill" href="index.html">Domov</a>
+
+      <div class="dropdown">
+        <button class="dropbtn nav-pill" aria-haspopup="true" aria-expanded="false">
+          <span>Projekti</span>
+          <svg class="chev" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 7.5 10 12.5 15 7.5"/></svg>
+        </button>
+        <div class="dropdown-menu">
+          <a href="racek.html">RAČek</a>
+          <a href="brin.html">B-RIN</a>
+          <a href="marinka.html">MARiNKA</a>
+          <a href="katarina.html">KataRINa</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn nav-pill" aria-haspopup="true" aria-expanded="false">
+          <span>Gradivo</span>
+          <svg class="chev" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 7.5 10 12.5 15 7.5"/></svg>
+        </button>
+        <div class="dropdown-menu">
+          <a href="#">Učni cilji</a>
+          <a href="#">Učni scenariji</a>
+          <a href="#">Katalog znanja</a>
+        </div>
+      </div>
+
+      <a class="nav-pill" href="index.html#o-portalu">O nas</a>
+      <a class="nav-pill" href="#kontakt">Kontakt</a>
+    </nav>
+
+    <button class="menu-btn" aria-label="Odpri meni">☰</button>
+  </div>
+
+  <div class="mobile-menu">
+    <a href="index.html">Domov</a>
+
+    <div class="mobile-dropdown-title">
+      <span>Projekti</span>
+      <svg class="chev" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 7.5 10 12.5 15 7.5"/></svg>
+    </div>
+    <div class="mobile-submenu">
+      <a href="racek.html">RAČek</a>
+      <a href="brin.html">B-RIN</a>
+      <a href="marinka.html">MARiNKA</a>
+      <a href="katarina.html">KataRINa</a>
+    </div>
+
+    <div class="mobile-dropdown-title">
+      <span>Gradivo</span>
+      <svg class="chev" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 7.5 10 12.5 15 7.5"/></svg>
+    </div>
+    <div class="mobile-submenu">
+      <a href="#">Učni cilji</a>
+      <a href="#">Učni scenariji</a>
+      <a href="#">Katalog znanja</a>
+    </div>
+
+    <a href="index.html#o-portalu">O nas</a>
+    <a href="#kontakt">Kontakt</a>
+  </div>
+</header>
+<main id="top">
+  <section class="page-hero">
+    <div class="wrap project-hero-box">
+      <div class="project-hero-grid">
+        <div>
+          <p class="eyebrow">Projekt</p>
+          <h1>KataRINa</h1>
+          <p class="lead">Projekt je usmerjen v srednješolsko izobraževanje ter uvajanje temeljnih vsebin računalništva in informatike za boljšo digitalno pismenost mladih.</p>
+        </div>
+        <div class="logo-panel katarina">
+          <img src="assets/Slike/logo-katarina.png" alt="Logotip projekta KataRINa">
+        </div>
+      </div>
+      <div class="meta-grid">
+        <div class="meta-card"><h3>Trajanje</h3><p>1. 9. 2023 – 30. 6. 2026</p></div><div class="meta-card"><h3>Vrednost</h3><p>900.000 EUR</p></div><div class="meta-card"><h3>Ciljna skupina</h3><p>srednje šole</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section wrap">
+    <div class="content-block">
+      <p class="eyebrow">O projektu</p>
+      <h2>Podrobnejši opis</h2>
+      <p>KataRINa se osredotoča na srednješolsko izobraževanje in na sistemsko vključevanje temeljnih vsebin računalništva in informatike v inovativne oddelke srednjih šol. Na rin.si je izpostavljeno, da je digitalna pismenost ključna za uspešno življenje ter da številne države EU že vključujejo temeljna znanja RIN v šolski sistem.</p>
+      <p>Projekt predvideva popis obstoječega stanja na VIZ, razvoj in evalvacijo vzorčnih učnih scenarijev, pripravo Kataloga temeljnih znanj RIN, oblikovanje kriterijev vrednotenja in vzpostavitev učeče se skupnosti. Vsebinsko se opira na kurikularni okvir RINOS in na obstoječi spletni učbenik Informatika, pri zdržnosti projekta pa na skupnost učiteljev NAPOJ.</p>
+      <p>Na naslovni strani rin.si je KataRINa predstavljena kot projekt, katerega cilj je izboljšanje digitalnih znanj med mladimi v Sloveniji in uvajanje temeljnih vsebin RIN v srednješolski prostor.</p>
+    </div>
+  </section>
+
+  <section class="content-section wrap">
+    <div class="content-block">
+      <p class="eyebrow">Ključni poudarki</p>
+      <h2>Kaj projekt prinaša</h2>
+      <ul>
+        <li>uvajanje temeljnih vsebin RIN v srednješolsko izobraževanje,</li><li>razvoj učnih scenarijev in priprava Kataloga temeljnih znanj RIN,</li><li>podpora učiteljem prek učeče se skupnosti in obstoječih gradiv,</li><li>diseminacija rezultatov in oblikovanje podpornih okolij za srednje šole.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="content-section wrap">
+  <div class="content-block">
+    <p class="eyebrow">Sodelujoči VIZ</p>
+    <h2>Sodelujoči VIZ</h2>
+    <ul class="project-page-list">
+      
+          <li>Seznam sodelujočih srednjih šol še ni dopolnjen<br><small>Slovenija · Dopolnitev v pripravi</small></li>
+        
+    </ul>
+    <p class="project-page-help">Če mi pošlješ natančne naslove posameznih VIZ, lahko zemljevid še dodatno izboljšam z bolj točnimi lokacijami in po potrebi dodam tudi popolne naslove na stran.</p>
+  </div>
+</section>
+
+  
+<section class="content-section wrap">
+  <div class="content-block">
+    <p class="eyebrow">Lokacije</p>
+    <h2>Pregled sodelujočih lokacij</h2>
+    <div class="full-map-shell">
+      <p class="map-subtitle">Zemljevid prikazuje sodelujoče VIZ in njihove lokacije po Sloveniji.</p>
+      <div id="map_katarina" class="leaflet-map"></div>
+      </div>
+      <div class="map-shell">
+        <h3>Lokacije</h3>
+        
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function showMap_map_katarina(id, centerLat, centerLng, zoom, points) {
+  const mapLayer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; OpenStreetMap'
+  });
+  const map = L.map(id, {
+    layers: [mapLayer],
+    center: [centerLat, centerLng],
+    zoom: zoom,
+    scrollWheelZoom: false,
+    preferCanvas: true,
+  });
+  const markerLayer = L.layerGroup().addTo(map);
+  points.forEach((p) => {
+    L.marker([p.lat, p.lng]).addTo(markerLayer)
+      .bindPopup(`<div class="popup-title">${p.name}</div><div class="popup-meta">${p.type}<br>${p.place}</div>`);
+  });
+  
+
+  if (points.length > 1) {
+    const bounds = L.latLngBounds(points.map(p => [p.lat, p.lng]));
+    map.fitBounds(bounds.pad(0.15));
+  }
+}
+document.addEventListener("DOMContentLoaded", () => {
+  showMap_map_katarina('map_katarina', 46.1199, 14.8153, 7, [{"name": "Seznam sodelujočih srednjih šol še ni dopolnjen", "place": "Slovenija", "type": "Dopolnitev v pripravi", "lat": 46.1199, "lng": 14.8153}]);
+});
+</script>
+    </div>
+  </div>
+</section>
+<script>
+function showMap_map_katarina(id, centerLat, centerLng, zoom, points) {
+  const mapLayer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; OpenStreetMap'
+  });
+  const map = L.map(id, {
+    layers: [mapLayer],
+    center: [centerLat, centerLng],
+    zoom: zoom,
+    scrollWheelZoom: false,
+    preferCanvas: true,
+  });
+  const markerLayer = L.layerGroup().addTo(map);
+  points.forEach((p) => {
+    L.marker([p.lat, p.lng]).addTo(markerLayer)
+      .bindPopup(`<div class="popup-title">${p.name}</div><div class="popup-meta">${p.type}<br>${p.place}</div>`);
+  });
+  
+
+  if (points.length > 1) {
+    const bounds = L.latLngBounds(points.map(p => [p.lat, p.lng]));
+    map.fitBounds(bounds.pad(0.15));
+  }
+}
+document.addEventListener("DOMContentLoaded", () => {
+  showMap_map_katarina('map_katarina', 46.1199, 14.8153, 7, [{"name": "Seznam sodelujočih srednjih šol še ni dopolnjen", "place": "Slovenija", "type": "Dopolnitev v pripravi", "lat": 46.1199, "lng": 14.8153}]);
+});
+</script>
+
+
+  <section class="footer-strip-section wrap">
+    <div class="footer-strip-box">
+      <img src="assets/Slike/footer-strip.png" alt="Logotipi financerjev">
+    </div>
+  </section>
+</main>
+<footer id="kontakt" class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <h3>Računalništvo in informatika</h3>
+      <p>Portal povezuje projekte RAČek, B-RIN, MARiNKA in KataRINa ter podpira razvoj temeljnih vsebin računalništva in informatike v slovenskem vzgojno-izobraževalnem prostoru.</p>
+    </div>
+    <div>
+      <h4>Projekti</h4>
+      <ul>
+        <li><a href="racek.html">RAČek</a></li>
+        <li><a href="brin.html">B-RIN</a></li>
+        <li><a href="marinka.html">MARiNKA</a></li>
+        <li><a href="katarina.html">KataRINa</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Gradivo</h4>
+      <ul>
+        <li><a href="#">Učni cilji</a></li>
+        <li><a href="#">Učni scenariji</a></li>
+        <li><a href="#">Katalog znanja</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Kontakt</h4>
+      <p>Tukaj lahko dodaš uradni kontakt, e-pošto ali naslov.</p>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>© 2026 Računalništvo in informatika</p>
+    <a href="#top">Nazaj na vrh</a>
+  </div>
+</footer>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="script.js"></script>
+</body>
+</html>

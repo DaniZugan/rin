@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAČek – Računalništvo in informatika</title>
+  <meta name="description" content="Projekt krepi digitalne kompetence in temeljna znanja računalništva in informatike z razvijanjem računalniškega mišljenja od vrtca do 5. razreda osnovne šole." />
+  <link rel="icon" type="image/png" href="assets/Slike/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="index.html" class="brand">
+      <img src="assets/Slike/favicon.png" alt="Ikona Računalništvo in informatika">
+      <span class="brand-text">
+        <span class="brand-title">Računalništvo in informatika</span>
+        <span class="brand-sub">Skupen portal projektov in gradiv</span>
+      </span>
+    </a>
+
+    <nav class="main-nav">
+      <a class="nav-pill" href="index.html">Domov</a>
+
+      <div class="dropdown">
+        <button class="dropbtn nav-pill" aria-haspopup="true" aria-expanded="false">
+          <span>Projekti</span>
+          <svg class="chev" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 7.5 10 12.5 15 7.5"/></svg>
+        </button>
+        <div class="dropdown-menu">
+          <a href="racek.html">RAČek</a>
+          <a href="brin.html">B-RIN</a>
+          <a href="marinka.html">MARiNKA</a>
+          <a href="katarina.html">KataRINa</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn nav-pill" aria-haspopup="true" aria-expanded="false">
+          <span>Gradivo</span>
+          <svg class="chev" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 7.5 10 12.5 15 7.5"/></svg>
+        </button>
+        <div class="dropdown-menu">
+          <a href="#">Učni cilji</a>
+          <a href="#">Učni scenariji</a>
+          <a href="#">Katalog znanja</a>
+        </div>
+      </div>
+
+      <a class="nav-pill" href="index.html#o-portalu">O nas</a>
+      <a class="nav-pill" href="#kontakt">Kontakt</a>
+    </nav>
+
+    <button class="menu-btn" aria-label="Odpri meni">☰</button>
+  </div>
+
+  <div class="mobile-menu">
+    <a href="index.html">Domov</a>
+
+    <div class="mobile-dropdown-title">
+      <span>Projekti</span>
+      <svg class="chev" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 7.5 10 12.5 15 7.5"/></svg>
+    </div>
+    <div class="mobile-submenu">
+      <a href="racek.html">RAČek</a>
+      <a href="brin.html">B-RIN</a>
+      <a href="marinka.html">MARiNKA</a>
+      <a href="katarina.html">KataRINa</a>
+    </div>
+
+    <div class="mobile-dropdown-title">
+      <span>Gradivo</span>
+      <svg class="chev" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 7.5 10 12.5 15 7.5"/></svg>
+    </div>
+    <div class="mobile-submenu">
+      <a href="#">Učni cilji</a>
+      <a href="#">Učni scenariji</a>
+      <a href="#">Katalog znanja</a>
+    </div>
+
+    <a href="index.html#o-portalu">O nas</a>
+    <a href="#kontakt">Kontakt</a>
+  </div>
+</header>
+<main id="top">
+  <section class="page-hero">
+    <div class="wrap project-hero-box">
+      <div class="project-hero-grid">
+        <div>
+          <p class="eyebrow">Projekt</p>
+          <h1>RAČek</h1>
+          <p class="lead">Projekt krepi digitalne kompetence in temeljna znanja računalništva in informatike z razvijanjem računalniškega mišljenja od vrtca do 5. razreda osnovne šole.</p>
+        </div>
+        <div class="logo-panel racek">
+          <img src="assets/Slike/logo-racek.png" alt="Logotip projekta RAČek">
+        </div>
+      </div>
+      <div class="meta-grid">
+        <div class="meta-card"><h3>Nosilna organizacija</h3><p>UP PEF</p></div><div class="meta-card"><h3>Partnerji</h3><p>FNM UM, UL FRI</p></div><div class="meta-card"><h3>Ciljna skupina</h3><p>vrtci in OŠ do 5. razreda</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section wrap">
+    <div class="content-block">
+      <p class="eyebrow">O projektu</p>
+      <h2>Podrobnejši opis</h2>
+      <p>Projekt RAČek izhaja iz javnega razpisa za razvoj računalniškega mišljenja z vključevanjem STEM kompletov v vrtcih in osnovnih šolah od 1. do 5. razreda. Nosilna organizacija je UP PEF, pri projektu pa sodelujeta tudi FNM UM in UL FRI. Projekt sta podprla Ministrstvo za vzgojo in izobraževanje ter Evropska unija – NextGenerationEU.</p>
+      <p>Vsebinski poudarek je na razvijanju računalniškega mišljenja pri otrocih in učencih z uporabo STEM kompletov, pri tem pa projekt spodbuja sodobne učne metode, medpredmetno povezovanje in praktično uporabo znanja. Cilj je, da strokovni delavci dobijo ustrezna gradiva, usposabljanja in podporna okolja za vključevanje temeljnih vsebin računalništva in informatike že v najzgodnejših obdobjih učenja.</p>
+      <p>Na naslovni strani rin.si je RAČek predstavljen kot projekt, usmerjen v krepitev digitalnih kompetenc in temeljnih znanj RIN od vrtca do 5. razreda osnovne šole, s poudarkom na razvoju računalniškega mišljenja, medpredmetnem povezovanju in sodobnih učnih metodah.</p>
+    </div>
+  </section>
+
+  <section class="content-section wrap">
+    <div class="content-block">
+      <p class="eyebrow">Ključni poudarki</p>
+      <h2>Kaj projekt prinaša</h2>
+      <ul>
+        <li>razvoj računalniškega mišljenja z vključevanjem STEM kompletov,</li><li>priprava programov usposabljanj za učitelje in smernic za vključevanje STEM pristopov,</li><li>katalog operativnih ciljev in učni scenariji za vrtec ter 1.–5. razred OŠ,</li><li>podporno okolje za izmenjavo znanj in dobrih praks med sodelujočimi VIZ.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="content-section wrap">
+    <div class="content-block">
+      <p class="eyebrow">Sodelujoči VIZ</p>
+      <h2>Sodelujoči VIZ</h2>
+      <ul class="project-page-list">
+        
+          <li><a href="https://www.os-celje.si/" target="_blank" rel="noopener">OŠ Celje</a><br><small>Celje · Osnovna šola</small></li>
+          <li><a href="https://vrtec.ossmarje.si" target="_blank" rel="noopener">Vrtec OŠ Šmarje pri Kopru</a><br><small>Šmarje · Vrtec</small></li>
+          <li><a href="https://www.osvsmuc.si" target="_blank" rel="noopener">OŠ Vojke Šmuc Izola</a><br><small>Izola · Osnovna šola</small></li>
+          <li><a href="https://vrtec-jelka.si" target="_blank" rel="noopener">Vrtec Jelka</a><br><small>Ljubljana · Vrtec</small></li>
+          <li><a href="https://www.sola-solkan.si" target="_blank" rel="noopener">OŠ Solkan</a><br><small>Solkan · Osnovna šola</small></li>
+          <li><a href="https://www.vrtec-skofije.si" target="_blank" rel="noopener">Vrtec pri OŠ Oskarja Kovačiča Škofije</a><br><small>Škofije · Vrtec</small></li>
+          <li><a href="https://www.oslivade.si" target="_blank" rel="noopener">OŠ Livade Izola</a><br><small>Izola · Osnovna šola</small></li>
+          <li><a href="http://www.dusanabordona.si" target="_blank" rel="noopener">OŠ Dušana Bordona Semedela – Koper</a><br><small>Koper · Osnovna šola</small></li>
+          <li><a href="https://www.vrtec-pedenjped.si" target="_blank" rel="noopener">Vrtec Pedenjped Ljubljana</a><br><small>Ljubljana · Vrtec</small></li>
+        
+      </ul>
+    </div>
+  </section>
+
+  
+<section class="content-section wrap">
+  <div class="content-block">
+    <p class="eyebrow">Lokacije</p>
+    <h2>Pregled sodelujočih lokacij</h2>
+    <div class="map-shell">
+      <p class="map-subtitle">Zemljevid prikazuje sodelujoče VIZ in njihove lokacije po Sloveniji.</p>
+      <div id="map_racek" class="leaflet-map"></div>
+      </div>
+      <div class="map-shell">
+        <h3>Lokacije</h3>
+        
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function showMap_map_racek(id, centerLat, centerLng, zoom, points) {
+  const mapLayer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; OpenStreetMap'
+  });
+  const map = L.map(id, {
+    layers: [mapLayer],
+    center: [centerLat, centerLng],
+    zoom: zoom,
+    scrollWheelZoom: false,
+    preferCanvas: true,
+  });
+  const markerLayer = L.layerGroup().addTo(map);
+  points.forEach((p) => {
+    L.marker([p.lat, p.lng]).addTo(markerLayer)
+      .bindPopup(`<div class="popup-title">${p.name}</div><div class="popup-meta">${p.type}<br>${p.place}</div>`);
+  });
+  
+
+  if (points.length > 1) {
+    const bounds = L.latLngBounds(points.map(p => [p.lat, p.lng]));
+    map.fitBounds(bounds.pad(0.15));
+  }
+}
+document.addEventListener("DOMContentLoaded", () => {
+  showMap_map_racek('map_racek', 46.0569, 14.5058, 8, [
+    {"name": "OŠ Celje", "place": "Celje", "type": "Osnovna šola", "lat": 46.2397, "lng": 15.2677, "address": "Ljubljanska cesta 1, 3000 Celje", "website": "https://www.os-celje.si/"},
+    {"name": "Vrtec OŠ Šmarje pri Kopru", "place": "Šmarje", "type": "Vrtec", "lat": 45.5067, "lng": 13.7378, "address": "Šmarje 1, 6274 Šmarje", "website": "https://vrtec.ossmarje.si"},
+    {"name": "OŠ Vojke Šmuc Izola", "place": "Izola", "type": "Osnovna šola", "lat": 45.5361, "lng": 13.6619, "address": "Prešernova cesta 4, 6310 Izola", "website": "https://www.osvsmuc.si"},
+    {"name": "Vrtec Jelka", "place": "Ljubljana", "type": "Vrtec", "lat": 46.0569, "lng": 14.5058, "address": "Glavarjeva ulica 18a, 1000 Ljubljana", "website": "https://vrtec-jelka.si"},
+    {"name": "OŠ Solkan", "place": "Solkan", "type": "Osnovna šola", "lat": 45.971, "lng": 13.6494, "address": "Šolska ulica 25, 5250 Solkan", "website": "https://www.sola-solkan.si"},
+    {"name": "Vrtec pri OŠ Oskarja Kovačiča Škofije", "place": "Škofije", "type": "Vrtec", "lat": 45.5718, "lng": 13.7922, "address": "Spodnje Škofije 40d, 6281 Škofije", "website": "https://www.vrtec-skofije.si"},
+    {"name": "OŠ Livade Izola", "place": "Izola", "type": "Osnovna šola", "lat": 45.5361, "lng": 13.6619, "address": "Livade 7, 6310 Izola", "website": "https://www.oslivade.si"},
+    {"name": "OŠ Dušana Bordona Semedela – Koper", "place": "Koper", "type": "Osnovna šola", "lat": 45.5481, "lng": 13.7302, "address": "Rozmanova ulica 21a, 6000 Koper", "website": "http://www.dusanabordona.si"},
+    {"name": "Vrtec Pedenjped Ljubljana", "place": "Ljubljana", "type": "Vrtec", "lat": 46.0569, "lng": 14.5058, "address": "Cerutova ulica 6, 1000 Ljubljana", "website": "https://www.vrtec-pedenjped.si"}
+  ]);
+});
+</script>
+
+  <section class="footer-strip-section wrap">
+    <div class="footer-strip-box">
+      <img src="assets/Slike/footer-strip.png" alt="Logotipi financerjev">
+    </div>
+  </section>
+</main>
+<footer id="kontakt" class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <h3>Računalništvo in informatika</h3>
+      <p>Portal povezuje projekte RAČek, B-RIN, MARiNKA in KataRINa ter podpira razvoj temeljnih vsebin računalništva in informatike v slovenskem vzgojno-izobraževalnem prostoru.</p>
+    </div>
+    <div>
+      <h4>Projekti</h4>
+      <ul>
+        <li><a href="racek.html">RAČek</a></li>
+        <li><a href="brin.html">B-RIN</a></li>
+        <li><a href="marinka.html">MARiNKA</a></li>
+        <li><a href="katarina.html">KataRINa</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Gradivo</h4>
+      <ul>
+        <li><a href="#">Učni cilji</a></li>
+        <li><a href="#">Učni scenariji</a></li>
+        <li><a href="#">Katalog znanja</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Kontakt</h4>
+      <p>Tukaj lahko dodaš uradni kontakt, e-pošto ali naslov.</p>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>© 2026 Računalništvo in informatika</p>
+    <a href="#top">Nazaj na vrh</a>
+  </div>
+</footer>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="script.js"></script>
+</body>
+</html>

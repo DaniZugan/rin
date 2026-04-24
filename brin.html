@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>B-RIN – Računalništvo in informatika</title>
+  <meta name="description" content="Projekt povezuje vrtce in osnovne šole ter razvija učne scenarije, katalog temeljnih vsebin RIN in didaktična priporočila za najmlajše učeče se." />
+  <link rel="icon" type="image/png" href="assets/Slike/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="index.html" class="brand">
+      <img src="assets/Slike/favicon.png" alt="Ikona Računalništvo in informatika">
+      <span class="brand-text">
+        <span class="brand-title">Računalništvo in informatika</span>
+        <span class="brand-sub">Skupen portal projektov in gradiv</span>
+      </span>
+    </a>
+
+    <nav class="main-nav">
+      <a class="nav-pill" href="index.html">Domov</a>
+
+      <div class="dropdown">
+        <button class="dropbtn nav-pill" aria-haspopup="true" aria-expanded="false">
+          <span>Projekti</span>
+          <svg class="chev" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 7.5 10 12.5 15 7.5"/></svg>
+        </button>
+        <div class="dropdown-menu">
+          <a href="racek.html">RAČek</a>
+          <a href="brin.html">B-RIN</a>
+          <a href="marinka.html">MARiNKA</a>
+          <a href="katarina.html">KataRINa</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn nav-pill" aria-haspopup="true" aria-expanded="false">
+          <span>Gradivo</span>
+          <svg class="chev" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 7.5 10 12.5 15 7.5"/></svg>
+        </button>
+        <div class="dropdown-menu">
+          <a href="#">Učni cilji</a>
+          <a href="#">Učni scenariji</a>
+          <a href="#">Katalog znanja</a>
+        </div>
+      </div>
+
+      <a class="nav-pill" href="index.html#o-portalu">O nas</a>
+      <a class="nav-pill" href="#kontakt">Kontakt</a>
+    </nav>
+
+    <button class="menu-btn" aria-label="Odpri meni">☰</button>
+  </div>
+
+  <div class="mobile-menu">
+    <a href="index.html">Domov</a>
+
+    <div class="mobile-dropdown-title">
+      <span>Projekti</span>
+      <svg class="chev" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 7.5 10 12.5 15 7.5"/></svg>
+    </div>
+    <div class="mobile-submenu">
+      <a href="racek.html">RAČek</a>
+      <a href="brin.html">B-RIN</a>
+      <a href="marinka.html">MARiNKA</a>
+      <a href="katarina.html">KataRINa</a>
+    </div>
+
+    <div class="mobile-dropdown-title">
+      <span>Gradivo</span>
+      <svg class="chev" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 7.5 10 12.5 15 7.5"/></svg>
+    </div>
+    <div class="mobile-submenu">
+      <a href="#">Učni cilji</a>
+      <a href="#">Učni scenariji</a>
+      <a href="#">Katalog znanja</a>
+    </div>
+
+    <a href="index.html#o-portalu">O nas</a>
+    <a href="#kontakt">Kontakt</a>
+  </div>
+</header>
+<main id="top">
+  <section class="page-hero">
+    <div class="wrap project-hero-box">
+      <div class="project-hero-grid">
+        <div>
+          <p class="eyebrow">Projekt</p>
+          <h1>B-RIN</h1>
+          <p class="lead">Projekt povezuje vrtce in osnovne šole ter razvija učne scenarije, katalog temeljnih vsebin RIN in didaktična priporočila za najmlajše učeče se.</p>
+        </div>
+        <div class="logo-panel brin">
+          <img src="assets/Slike/logo-brin.png" alt="Logotip projekta B-RIN">
+        </div>
+      </div>
+      <div class="meta-grid">
+        <div class="meta-card"><h3>Trajanje</h3><p>1. 9. 2023 – 30. 6. 2026</p></div><div class="meta-card"><h3>Vrednost</h3><p>900.000 EUR</p></div><div class="meta-card"><h3>Nosilna organizacija</h3><p>Univerza na Primorskem</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section wrap">
+    <div class="content-block">
+      <p class="eyebrow">O projektu</p>
+      <h2>Podrobnejši opis</h2>
+      <p>B-RIN je usmerjen v eksperimentalni načrt uvajanja, implementacije in evalvacije temeljnih vsebin računalništva in informatike v predšolsko vzgojo ter v osnovno šolo do vključno 5. razreda. Projekt poudarja razvojno-psihološko kontinuiteto med vrtcem in osnovno šolo ter prilagajanje didaktičnih strategij različnim obdobjem zgodnjega in srednjega otroštva.</p>
+      <p>Na rin.si je posebej izpostavljeno, da projekt vključuje 10 VIZ, med njimi vrtce, vrtce pri osnovnih šolah in osnovne šole. Rezultati projekta obsegajo popis obstoječega stanja na področju RIN, razvoj in evalvacijo učnih scenarijev, pripravo kataloga temeljnih znanj RIN ter vzpostavljanje učeče se skupnosti, ki omogoča izmenjavo dobrih praks.</p>
+      <p>Projekt bo po javno objavljenem opisu na rin.si prispeval tudi k diseminaciji in promociji vključevanja temeljnih vsebin RIN v širšem vzgojno-izobraževalnem prostoru ter k oblikovanju podpornih okolij za vrtce in osnovne šole do 5. razreda.</p>
+    </div>
+  </section>
+
+  <section class="content-section wrap">
+    <div class="content-block">
+      <p class="eyebrow">Ključni poudarki</p>
+      <h2>Kaj projekt prinaša</h2>
+      <ul>
+        <li>uvajanje temeljnih vsebin RIN v predšolsko vzgojo in OŠ do 5. razreda,</li><li>razvoj, izvedba in evalvacija vzorčnih učnih scenarijev,</li><li>priprava Kataloga temeljnih znanj RIN z učnimi cilji in kriteriji vrednotenja,</li><li>vzpostavitev učeče se skupnosti in širjenje dobrih praks po Sloveniji.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="content-section wrap">
+  <div class="content-block">
+    <p class="eyebrow">Sodelujoči VIZ</p>
+    <h2>Sodelujoči VIZ</h2>
+    <ul class="project-page-list">
+      
+          <li><a href="#" target="_blank" rel="noopener">Vrtec Mavrica Brežice</a><br><small>Brežice · Vrtec</small></li><li><a href="#" target="_blank" rel="noopener">Vrtec Jelka</a><br><small>Ljubljana · Vrtec</small></li><li><a href="#" target="_blank" rel="noopener">Javni vzgojno-izobraževalni zavod Vrtec Koper</a><br><small>Koper · Vrtec</small></li><li><a href="#" target="_blank" rel="noopener">OŠ in vrtec Ankaran</a><br><small>Ankaran · Osnovna šola in vrtec</small></li><li><a href="#" target="_blank" rel="noopener">OŠ Solkan in vrtec Solkan</a><br><small>Solkan · Osnovna šola in vrtec</small></li><li><a href="#" target="_blank" rel="noopener">OŠ heroja Janeza Hribarja Stari trg pri Ložu in Vrtec Polhek</a><br><small>Stari trg pri Ložu · Osnovna šola in vrtec</small></li><li><a href="#" target="_blank" rel="noopener">OŠ Frana Erjavca Nova Gorica</a><br><small>Nova Gorica · Osnovna šola</small></li><li><a href="#" target="_blank" rel="noopener">OŠ Frana Kocbeka Gornji Grad</a><br><small>Gornji Grad · Osnovna šola</small></li><li><a href="#" target="_blank" rel="noopener">OŠ Oskarja Kovačiča Škofije</a><br><small>Škofije · Osnovna šola</small></li><li><a href="#" target="_blank" rel="noopener">OŠ Vojke Šmuc Izola</a><br><small>Izola · Osnovna šola</small></li>
+        
+    </ul>
+    <p class="project-page-help">Če mi pošlješ natančne naslove posameznih VIZ, lahko zemljevid še dodatno izboljšam z bolj točnimi lokacijami in po potrebi dodam tudi popolne naslove na stran.</p>
+  </div>
+</section>
+
+  
+<section class="content-section wrap">
+  <div class="content-block">
+    <p class="eyebrow">Lokacije</p>
+    <h2>Pregled sodelujočih lokacij</h2>
+    <div class="full-map-shell">
+      <p class="map-subtitle">Zemljevid prikazuje sodelujoče VIZ in njihove lokacije po Sloveniji.</p>
+      <div id="map_brin" class="leaflet-map"></div>
+      </div>
+      <div class="map-shell">
+        <h3>Lokacije</h3>
+        
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function showMap_map_brin(id, centerLat, centerLng, zoom, points) {
+  const mapLayer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; OpenStreetMap'
+  });
+  const map = L.map(id, {
+    layers: [mapLayer],
+    center: [centerLat, centerLng],
+    zoom: zoom,
+    scrollWheelZoom: false,
+    preferCanvas: true,
+  });
+  const markerLayer = L.layerGroup().addTo(map);
+  points.forEach((p) => {
+    L.marker([p.lat, p.lng]).addTo(markerLayer)
+      .bindPopup(`<div class="popup-title">${p.name}</div><div class="popup-meta">${p.type}<br>${p.place}</div>`);
+  });
+  
+
+  if (points.length > 1) {
+    const bounds = L.latLngBounds(points.map(p => [p.lat, p.lng]));
+    map.fitBounds(bounds.pad(0.15));
+  }
+}
+document.addEventListener("DOMContentLoaded", () => {
+  showMap_map_brin('map_brin', 46.0569, 14.5058, 8, [{"name": "Vrtec Mavrica Brežice", "place": "Brežice", "type": "Vrtec", "lat": 45.9041, "lng": 15.5911}, {"name": "Vrtec Jelka", "place": "Ljubljana", "type": "Vrtec", "lat": 46.0569, "lng": 14.5058}, {"name": "Javni vzgojno-izobraževalni zavod Vrtec Koper", "place": "Koper", "type": "Vrtec", "lat": 45.5481, "lng": 13.7302}, {"name": "OŠ in vrtec Ankaran", "place": "Ankaran", "type": "Osnovna šola in vrtec", "lat": 45.5786, "lng": 13.7361}, {"name": "OŠ Solkan in vrtec Solkan", "place": "Solkan", "type": "Osnovna šola in vrtec", "lat": 45.971, "lng": 13.6494}, {"name": "OŠ heroja Janeza Hribarja Stari trg pri Ložu in Vrtec Polhek", "place": "Stari trg pri Ložu", "type": "Osnovna šola in vrtec", "lat": 45.7145, "lng": 14.4688}, {"name": "OŠ Frana Erjavca Nova Gorica", "place": "Nova Gorica", "type": "Osnovna šola", "lat": 45.956, "lng": 13.6484}, {"name": "OŠ Frana Kocbeka Gornji Grad", "place": "Gornji Grad", "type": "Osnovna šola", "lat": 46.2958, "lng": 14.8083}, {"name": "OŠ Oskarja Kovačiča Škofije", "place": "Škofije", "type": "Osnovna šola", "lat": 45.5718, "lng": 13.7922}, {"name": "OŠ Vojke Šmuc Izola", "place": "Izola", "type": "Osnovna šola", "lat": 45.5361, "lng": 13.6619}]);
+});
+</script>
+    </div>
+  </div>
+</section>
+<script>
+function showMap_map_brin(id, centerLat, centerLng, zoom, points) {
+  const mapLayer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; OpenStreetMap'
+  });
+  const map = L.map(id, {
+    layers: [mapLayer],
+    center: [centerLat, centerLng],
+    zoom: zoom,
+    scrollWheelZoom: false,
+    preferCanvas: true,
+  });
+  const markerLayer = L.layerGroup().addTo(map);
+  points.forEach((p) => {
+    L.marker([p.lat, p.lng]).addTo(markerLayer)
+      .bindPopup(`<div class="popup-title">${p.name}</div><div class="popup-meta">${p.type}<br>${p.place}</div>`);
+  });
+  
+
+  if (points.length > 1) {
+    const bounds = L.latLngBounds(points.map(p => [p.lat, p.lng]));
+    map.fitBounds(bounds.pad(0.15));
+  }
+}
+document.addEventListener("DOMContentLoaded", () => {
+  showMap_map_brin('map_brin', 46.0569, 14.5058, 8, [{"name": "Vrtec Mavrica Brežice", "place": "Brežice", "type": "Vrtec", "lat": 45.9041, "lng": 15.5911}, {"name": "Vrtec Jelka", "place": "Ljubljana", "type": "Vrtec", "lat": 46.0569, "lng": 14.5058}, {"name": "Javni vzgojno-izobraževalni zavod Vrtec Koper", "place": "Koper", "type": "Vrtec", "lat": 45.5481, "lng": 13.7302}, {"name": "OŠ in vrtec Ankaran", "place": "Ankaran", "type": "Osnovna šola in vrtec", "lat": 45.5786, "lng": 13.7361}, {"name": "OŠ Solkan in vrtec Solkan", "place": "Solkan", "type": "Osnovna šola in vrtec", "lat": 45.971, "lng": 13.6494}, {"name": "OŠ heroja Janeza Hribarja Stari trg pri Ložu in Vrtec Polhek", "place": "Stari trg pri Ložu", "type": "Osnovna šola in vrtec", "lat": 45.7145, "lng": 14.4688}, {"name": "OŠ Frana Erjavca Nova Gorica", "place": "Nova Gorica", "type": "Osnovna šola", "lat": 45.956, "lng": 13.6484}, {"name": "OŠ Frana Kocbeka Gornji Grad", "place": "Gornji Grad", "type": "Osnovna šola", "lat": 46.2958, "lng": 14.8083}, {"name": "OŠ Oskarja Kovačiča Škofije", "place": "Škofije", "type": "Osnovna šola", "lat": 45.5718, "lng": 13.7922}, {"name": "OŠ Vojke Šmuc Izola", "place": "Izola", "type": "Osnovna šola", "lat": 45.5361, "lng": 13.6619}]);
+});
+</script>
+
+
+  <section class="footer-strip-section wrap">
+    <div class="footer-strip-box">
+      <img src="assets/Slike/footer-strip.png" alt="Logotipi financerjev">
+    </div>
+  </section>
+</main>
+<footer id="kontakt" class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <h3>Računalništvo in informatika</h3>
+      <p>Portal povezuje projekte RAČek, B-RIN, MARiNKA in KataRINa ter podpira razvoj temeljnih vsebin računalništva in informatike v slovenskem vzgojno-izobraževalnem prostoru.</p>
+    </div>
+    <div>
+      <h4>Projekti</h4>
+      <ul>
+        <li><a href="racek.html">RAČek</a></li>
+        <li><a href="brin.html">B-RIN</a></li>
+        <li><a href="marinka.html">MARiNKA</a></li>
+        <li><a href="katarina.html">KataRINa</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Gradivo</h4>
+      <ul>
+        <li><a href="#">Učni cilji</a></li>
+        <li><a href="#">Učni scenariji</a></li>
+        <li><a href="#">Katalog znanja</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Kontakt</h4>
+      <p>Tukaj lahko dodaš uradni kontakt, e-pošto ali naslov.</p>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>© 2026 Računalništvo in informatika</p>
+    <a href="#top">Nazaj na vrh</a>
+  </div>
+</footer>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="script.js"></script>
+</body>
+</html>
