@@ -146,7 +146,18 @@
       </div>
       <div class="map-shell">
         <h3>Lokacije</h3>
-        
+        <ul class="viz-list">
+          <li><a href="https://www.os-trzin.si" target="_blank" rel="noopener">OŠ Trzin</a> – Trzin</li>
+          <li><a href="https://www.os-pvoranca.si" target="_blank" rel="noopener">OŠ Prežihovega Voranca Ljubljana</a> – Ljubljana</li>
+          <li><a href="https://www.os-bled.si" target="_blank" rel="noopener">OŠ prof. dr. Josipa Plemlja Bled</a> – Bled</li>
+          <li><a href="https://www.os-logatec.si" target="_blank" rel="noopener">OŠ 8 talcev Logatec</a> – Logatec</li>
+          <li><a href="https://www.os-szagarja.si" target="_blank" rel="noopener">OŠ Staneta Žagarja Kranj</a> – Kranj</li>
+          <li><a href="https://www.os-maksa-pecarja.si" target="_blank" rel="noopener">OŠ n. h. Maksa Pečarja</a> – Ljubljana</li>
+          <li><a href="https://www.osvsmuc.si" target="_blank" rel="noopener">OŠ Vojke Šmuc Izola</a> – Izola</li>
+          <li><a href="https://www.sola-ng.si" target="_blank" rel="noopener">OŠ Frana Erjavca Nova Gorica</a> – Nova Gorica</li>
+          <li><a href="https://www.os-jpuharja.si" target="_blank" rel="noopener">OŠ Janeza Puharja Kranj</a> – Kranj</li>
+          <li><a href="https://www.os-elvevatovecprade.si" target="_blank" rel="noopener">OŠ Elvire Vatovec Prade</a> – Prade</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -166,8 +177,11 @@ function showMap_map_marinka(id, centerLat, centerLng, zoom, points) {
   });
   const markerLayer = L.layerGroup().addTo(map);
   points.forEach((p) => {
+    const popupContent = p.website 
+      ? `<div class="popup-title"><a href="${p.website}" target="_blank" rel="noopener">${p.name}</a></div><div class="popup-meta">${p.type}<br>${p.place}</div>`
+      : `<div class="popup-title">${p.name}</div><div class="popup-meta">${p.type}<br>${p.place}</div>`;
     L.marker([p.lat, p.lng]).addTo(markerLayer)
-      .bindPopup(`<div class="popup-title">${p.name}</div><div class="popup-meta">${p.type}<br>${p.place}</div>`);
+      .bindPopup(popupContent);
   });
   
 
@@ -177,7 +191,18 @@ function showMap_map_marinka(id, centerLat, centerLng, zoom, points) {
   }
 }
 document.addEventListener("DOMContentLoaded", () => {
-  showMap_map_marinka('map_marinka', 46.0569, 14.5058, 8, [{"name": "OŠ Trzin", "place": "Trzin", "type": "Osnovna šola", "lat": 46.1342, "lng": 14.5622}, {"name": "OŠ Prežihovega Voranca Ljubljana", "place": "Ljubljana", "type": "Osnovna šola", "lat": 46.0569, "lng": 14.5058}, {"name": "OŠ prof. dr. Josipa Plemlja Bled", "place": "Bled", "type": "Osnovna šola", "lat": 46.3692, "lng": 14.1136}, {"name": "OŠ 8 talcev Logatec", "place": "Logatec", "type": "Osnovna šola", "lat": 45.9144, "lng": 14.2258}, {"name": "OŠ Staneta Žagarja Kranj", "place": "Kranj", "type": "Osnovna šola", "lat": 46.2389, "lng": 14.3556}, {"name": "OŠ n. h. Maksa Pečarja", "place": "Ljubljana", "type": "Osnovna šola", "lat": 46.083, "lng": 14.482}, {"name": "OŠ Vojke Šmuc Izola", "place": "Izola", "type": "Osnovna šola", "lat": 45.5361, "lng": 13.6619}, {"name": "OŠ Frana Erjavca Nova Gorica", "place": "Nova Gorica", "type": "Osnovna šola", "lat": 45.956, "lng": 13.6484}, {"name": "OŠ Janeza Puharja Kranj", "place": "Kranj", "type": "Osnovna šola", "lat": 46.2389, "lng": 14.3556}, {"name": "OŠ Elvire Vatovec Prade", "place": "Prade", "type": "Osnovna šola", "lat": 45.5263, "lng": 13.7764}]);
+  showMap_map_marinka('map_marinka', 46.0569, 14.5058, 8, [
+    {"name": "OŠ Trzin", "place": "Trzin", "type": "Osnovna šola", "lat": 46.1342, "lng": 14.5622, "website": "https://www.os-trzin.si"},
+    {"name": "OŠ Prežihovega Voranca Ljubljana", "place": "Ljubljana", "type": "Osnovna šola", "lat": 46.0569, "lng": 14.5058, "website": "https://www.os-pvoranca.si"},
+    {"name": "OŠ prof. dr. Josipa Plemlja Bled", "place": "Bled", "type": "Osnovna šola", "lat": 46.3692, "lng": 14.1136, "website": "https://www.os-bled.si"},
+    {"name": "OŠ 8 talcev Logatec", "place": "Logatec", "type": "Osnovna šola", "lat": 45.9144, "lng": 14.2258, "website": "https://www.os-logatec.si"},
+    {"name": "OŠ Staneta Žagarja Kranj", "place": "Kranj", "type": "Osnovna šola", "lat": 46.2389, "lng": 14.3556, "website": "https://www.os-szagarja.si"},
+    {"name": "OŠ n. h. Maksa Pečarja", "place": "Ljubljana", "type": "Osnovna šola", "lat": 46.083, "lng": 14.482, "website": "https://www.os-maksa-pecarja.si"},
+    {"name": "OŠ Vojke Šmuc Izola", "place": "Izola", "type": "Osnovna šola", "lat": 45.5361, "lng": 13.6619, "website": "https://www.osvsmuc.si"},
+    {"name": "OŠ Frana Erjavca Nova Gorica", "place": "Nova Gorica", "type": "Osnovna šola", "lat": 45.956, "lng": 13.6484, "website": "https://www.sola-ng.si"},
+    {"name": "OŠ Janeza Puharja Kranj", "place": "Kranj", "type": "Osnovna šola", "lat": 46.2389, "lng": 14.3556, "website": "https://www.os-jpuharja.si"},
+    {"name": "OŠ Elvire Vatovec Prade", "place": "Prade", "type": "Osnovna šola", "lat": 45.5263, "lng": 13.7764, "website": "https://www.os-elvevatovecprade.si"}
+  ]);
 });
 </script>
     </div>

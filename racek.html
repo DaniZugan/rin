@@ -153,7 +153,17 @@
       </div>
       <div class="map-shell">
         <h3>Lokacije</h3>
-        
+        <ul class="viz-list">
+          <li><a href="https://www.os-celje.si/" target="_blank" rel="noopener">OŠ Celje</a> – Celje</li>
+          <li><a href="https://vrtec.ossmarje.si" target="_blank" rel="noopener">Vrtec OŠ Šmarje pri Kopru</a> – Šmarje</li>
+          <li><a href="https://www.osvsmuc.si" target="_blank" rel="noopener">OŠ Vojke Šmuc Izola</a> – Izola</li>
+          <li><a href="https://vrtec-jelka.si" target="_blank" rel="noopener">Vrtec Jelka</a> – Ljubljana</li>
+          <li><a href="https://www.sola-solkan.si" target="_blank" rel="noopener">OŠ Solkan</a> – Solkan</li>
+          <li><a href="https://www.vrtec-skofije.si" target="_blank" rel="noopener">Vrtec pri OŠ Oskarja Kovačiča Škofije</a> – Škofije</li>
+          <li><a href="https://www.oslivade.si" target="_blank" rel="noopener">OŠ Livade Izola</a> – Izola</li>
+          <li><a href="http://www.dusanabordona.si" target="_blank" rel="noopener">OŠ Dušana Bordona Semedela</a> – Koper</li>
+          <li><a href="https://www.vrtec-pedenjped.si" target="_blank" rel="noopener">Vrtec Pedenjped Ljubljana</a> – Ljubljana</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -173,8 +183,11 @@ function showMap_map_racek(id, centerLat, centerLng, zoom, points) {
   });
   const markerLayer = L.layerGroup().addTo(map);
   points.forEach((p) => {
+    const popupContent = p.website 
+      ? `<div class="popup-title"><a href="${p.website}" target="_blank" rel="noopener">${p.name}</a></div><div class="popup-meta">${p.type}<br>${p.place}</div>`
+      : `<div class="popup-title">${p.name}</div><div class="popup-meta">${p.type}<br>${p.place}</div>`;
     L.marker([p.lat, p.lng]).addTo(markerLayer)
-      .bindPopup(`<div class="popup-title">${p.name}</div><div class="popup-meta">${p.type}<br>${p.place}</div>`);
+      .bindPopup(popupContent);
   });
   
 

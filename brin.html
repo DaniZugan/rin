@@ -146,7 +146,18 @@
       </div>
       <div class="map-shell">
         <h3>Lokacije</h3>
-        
+        <ul class="viz-list">
+          <li><a href="#" target="_blank" rel="noopener">Vrtec Mavrica Brežice</a> – Brežice</li>
+          <li><a href="https://vrtec-jelka.si" target="_blank" rel="noopener">Vrtec Jelka</a> – Ljubljana</li>
+          <li><a href="https://www.vrtec-koper.si" target="_blank" rel="noopener">Javni vzgojno-izobraževalni zavod Vrtec Koper</a> – Koper</li>
+          <li><a href="#" target="_blank" rel="noopener">OŠ in vrtec Ankaran</a> – Ankaran</li>
+          <li><a href="https://www.sola-solkan.si" target="_blank" rel="noopener">OŠ Solkan in vrtec Solkan</a> – Solkan</li>
+          <li><a href="#" target="_blank" rel="noopener">OŠ heroja Janeza Hribarja Stari trg pri Ložu in Vrtec Polhek</a> – Stari trg pri Ložu</li>
+          <li><a href="https://www.sola-ng.si" target="_blank" rel="noopener">OŠ Frana Erjavca Nova Gorica</a> – Nova Gorica</li>
+          <li><a href="https://www.os-gornjigrad.si" target="_blank" rel="noopener">OŠ Frana Kocbeka Gornji Grad</a> – Gornji Grad</li>
+          <li><a href="https://www.vrtec-skofije.si" target="_blank" rel="noopener">OŠ Oskarja Kovačiča Škofije</a> – Škofije</li>
+          <li><a href="https://www.osvsmuc.si" target="_blank" rel="noopener">OŠ Vojke Šmuc Izola</a> – Izola</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -166,8 +177,11 @@ function showMap_map_brin(id, centerLat, centerLng, zoom, points) {
   });
   const markerLayer = L.layerGroup().addTo(map);
   points.forEach((p) => {
+    const popupContent = p.website 
+      ? `<div class="popup-title"><a href="${p.website}" target="_blank" rel="noopener">${p.name}</a></div><div class="popup-meta">${p.type}<br>${p.place}</div>`
+      : `<div class="popup-title">${p.name}</div><div class="popup-meta">${p.type}<br>${p.place}</div>`;
     L.marker([p.lat, p.lng]).addTo(markerLayer)
-      .bindPopup(`<div class="popup-title">${p.name}</div><div class="popup-meta">${p.type}<br>${p.place}</div>`);
+      .bindPopup(popupContent);
   });
   
 
@@ -177,7 +191,18 @@ function showMap_map_brin(id, centerLat, centerLng, zoom, points) {
   }
 }
 document.addEventListener("DOMContentLoaded", () => {
-  showMap_map_brin('map_brin', 46.0569, 14.5058, 8, [{"name": "Vrtec Mavrica Brežice", "place": "Brežice", "type": "Vrtec", "lat": 45.9041, "lng": 15.5911}, {"name": "Vrtec Jelka", "place": "Ljubljana", "type": "Vrtec", "lat": 46.0569, "lng": 14.5058}, {"name": "Javni vzgojno-izobraževalni zavod Vrtec Koper", "place": "Koper", "type": "Vrtec", "lat": 45.5481, "lng": 13.7302}, {"name": "OŠ in vrtec Ankaran", "place": "Ankaran", "type": "Osnovna šola in vrtec", "lat": 45.5786, "lng": 13.7361}, {"name": "OŠ Solkan in vrtec Solkan", "place": "Solkan", "type": "Osnovna šola in vrtec", "lat": 45.971, "lng": 13.6494}, {"name": "OŠ heroja Janeza Hribarja Stari trg pri Ložu in Vrtec Polhek", "place": "Stari trg pri Ložu", "type": "Osnovna šola in vrtec", "lat": 45.7145, "lng": 14.4688}, {"name": "OŠ Frana Erjavca Nova Gorica", "place": "Nova Gorica", "type": "Osnovna šola", "lat": 45.956, "lng": 13.6484}, {"name": "OŠ Frana Kocbeka Gornji Grad", "place": "Gornji Grad", "type": "Osnovna šola", "lat": 46.2958, "lng": 14.8083}, {"name": "OŠ Oskarja Kovačiča Škofije", "place": "Škofije", "type": "Osnovna šola", "lat": 45.5718, "lng": 13.7922}, {"name": "OŠ Vojke Šmuc Izola", "place": "Izola", "type": "Osnovna šola", "lat": 45.5361, "lng": 13.6619}]);
+  showMap_map_brin('map_brin', 46.0569, 14.5058, 8, [
+    {"name": "Vrtec Mavrica Brežice", "place": "Brežice", "type": "Vrtec", "lat": 45.9041, "lng": 15.5911, "website": ""},
+    {"name": "Vrtec Jelka", "place": "Ljubljana", "type": "Vrtec", "lat": 46.0569, "lng": 14.5058, "website": "https://vrtec-jelka.si"},
+    {"name": "Javni vzgojno-izobraževalni zavod Vrtec Koper", "place": "Koper", "type": "Vrtec", "lat": 45.5481, "lng": 13.7302, "website": "https://www.vrtec-koper.si"},
+    {"name": "OŠ in vrtec Ankaran", "place": "Ankaran", "type": "Osnovna šola in vrtec", "lat": 45.5786, "lng": 13.7361, "website": ""},
+    {"name": "OŠ Solkan in vrtec Solkan", "place": "Solkan", "type": "Osnovna šola in vrtec", "lat": 45.971, "lng": 13.6494, "website": "https://www.sola-solkan.si"},
+    {"name": "OŠ heroja Janeza Hribarja Stari trg pri Ložu in Vrtec Polhek", "place": "Stari trg pri Ložu", "type": "Osnovna šola in vrtec", "lat": 45.7145, "lng": 14.4688, "website": ""},
+    {"name": "OŠ Frana Erjavca Nova Gorica", "place": "Nova Gorica", "type": "Osnovna šola", "lat": 45.956, "lng": 13.6484, "website": "https://www.sola-ng.si"},
+    {"name": "OŠ Frana Kocbeka Gornji Grad", "place": "Gornji Grad", "type": "Osnovna šola", "lat": 46.2958, "lng": 14.8083, "website": "https://www.os-gornjigrad.si"},
+    {"name": "OŠ Oskarja Kovačiča Škofije", "place": "Škofije", "type": "Osnovna šola", "lat": 45.5718, "lng": 13.7922, "website": "https://www.vrtec-skofije.si"},
+    {"name": "OŠ Vojke Šmuc Izola", "place": "Izola", "type": "Osnovna šola", "lat": 45.5361, "lng": 13.6619, "website": "https://www.osvsmuc.si"}
+  ]);
 });
 </script>
     </div>

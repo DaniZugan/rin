@@ -146,7 +146,7 @@
       </div>
       <div class="map-shell">
         <h3>Lokacije</h3>
-        
+        <p class="viz-list">Seznam sodelujočih srednjih šol še ni dopolnjen. Podatki bodo dodani kmalu.</p>
       </div>
     </div>
   </div>
@@ -166,8 +166,11 @@ function showMap_map_katarina(id, centerLat, centerLng, zoom, points) {
   });
   const markerLayer = L.layerGroup().addTo(map);
   points.forEach((p) => {
+    const popupContent = p.website 
+      ? `<div class="popup-title"><a href="${p.website}" target="_blank" rel="noopener">${p.name}</a></div><div class="popup-meta">${p.type}<br>${p.place}</div>`
+      : `<div class="popup-title">${p.name}</div><div class="popup-meta">${p.type}<br>${p.place}</div>`;
     L.marker([p.lat, p.lng]).addTo(markerLayer)
-      .bindPopup(`<div class="popup-title">${p.name}</div><div class="popup-meta">${p.type}<br>${p.place}</div>`);
+      .bindPopup(popupContent);
   });
   
 
@@ -177,7 +180,9 @@ function showMap_map_katarina(id, centerLat, centerLng, zoom, points) {
   }
 }
 document.addEventListener("DOMContentLoaded", () => {
-  showMap_map_katarina('map_katarina', 46.1199, 14.8153, 7, [{"name": "Seznam sodelujočih srednjih šol še ni dopolnjen", "place": "Slovenija", "type": "Dopolnitev v pripravi", "lat": 46.1199, "lng": 14.8153}]);
+  showMap_map_katarina('map_katarina', 46.1199, 14.8153, 7, [
+    {"name": "Seznam sodelujočih srednjih šol še ni dopolnjen", "place": "Slovenija", "type": "Dopolnitev v pripravi", "lat": 46.1199, "lng": 14.8153, "website": ""}
+  ]);
 });
 </script>
     </div>
