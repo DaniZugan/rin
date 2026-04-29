@@ -1,6 +1,9 @@
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
+[id]{
+  scroll-margin-top:110px;
+}
 body{
   margin:0;
   font-family:Inter,Arial,sans-serif;
@@ -144,7 +147,10 @@ img{max-width:100%;display:block}
 .stat strong{display:block;font-size:2rem;color:#173d7a}
 .stat span{color:#4f6277}
 
-.footer-strip-section{padding:0 0 4rem}
+.footer-strip-section{
+  background:#f6f8fb;
+  padding:0 0 4rem
+}
 .footer-strip-box{
   background:#fff;border:1px solid #e7edf5;border-radius:24px;
   padding:1rem;box-shadow:0 14px 36px rgba(16,32,51,.05)
@@ -165,6 +171,63 @@ img{max-width:100%;display:block}
 .content-section{padding:0 0 1.25rem}
 .content-block{padding:1.45rem}
 .content-block ul{margin:.75rem 0 0 1rem}
+.locations-section{
+  background:#eef4ff;
+  padding:2rem 0 2.25rem;
+  margin:1rem 0 2rem;
+}
+.locations-section .content-block{
+  background:#fff;
+}
+.locations-section .full-map-shell,
+.locations-section .map-shell{
+  background:#fff;
+}
+.locations-section .map-shell{
+  margin-top:1rem;
+}
+.locations-layout{
+  display:grid;
+  grid-template-columns:3fr 1fr;
+  gap:1rem;
+  align-items:stretch;
+  margin-top:1rem;
+}
+.locations-layout .full-map-shell,
+.locations-layout .map-shell{
+  margin-top:0;
+}
+.locations-layout .map-shell{
+  display:flex;
+  flex-direction:column;
+  max-height:600px;
+}
+.locations-layout .viz-list{
+  grid-template-columns:1fr;
+  overflow:auto;
+  padding-right:.15rem;
+}
+.locations-layout .viz-list li{
+  padding:0;
+  border-color:#dde8f5;
+  border-radius:14px;
+  background:linear-gradient(180deg,#fff 0%,#f8fbff 100%);
+}
+.locations-layout .viz-list a{
+  display:block;
+  padding:.78rem .85rem;
+  color:#173d7a;
+  font-weight:800;
+  line-height:1.25;
+}
+.locations-layout .viz-list a:hover{
+  text-decoration:none;
+}
+.locations-layout .viz-list li:hover{
+  background:#eef4ff;
+  border-color:#c9d8ee;
+  box-shadow:0 8px 18px rgba(16,32,51,.08);
+}
 
 .info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
 .info-card{padding:1rem}
@@ -196,6 +259,8 @@ img{max-width:100%;display:block}
   .hero{padding-top:4rem}
   .project-grid,.stats{grid-template-columns:1fr}
   .hero-visual{min-height:280px}
+  .locations-layout{grid-template-columns:1fr}
+  .locations-layout .map-shell{max-height:none}
 }
 
 

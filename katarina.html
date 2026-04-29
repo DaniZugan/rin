@@ -122,32 +122,20 @@
     </div>
   </section>
 
-  <section class="content-section wrap">
-  <div class="content-block">
-    <p class="eyebrow">Sodelujoči VIZ</p>
-    <h2>Sodelujoči VIZ</h2>
-    <ul class="project-page-list">
-      
-          <li>Seznam sodelujočih srednjih šol še ni dopolnjen<br><small>Slovenija · Dopolnitev v pripravi</small></li>
-        
-    </ul>
-    <p class="project-page-help">Če mi pošlješ natančne naslove posameznih VIZ, lahko zemljevid še dodatno izboljšam z bolj točnimi lokacijami in po potrebi dodam tudi popolne naslove na stran.</p>
-  </div>
-</section>
-
-  
-<section class="content-section wrap">
-  <div class="content-block">
+<section class="content-section locations-section">
+  <div class="wrap">
+    <div class="content-block">
     <p class="eyebrow">Lokacije</p>
     <h2>Pregled sodelujočih lokacij</h2>
-    <div class="full-map-shell">
-      <p class="map-subtitle">Zemljevid prikazuje sodelujoče VIZ in njihove lokacije po Sloveniji.</p>
-      <div id="map_katarina" class="leaflet-map"></div>
+    <div class="locations-layout">
+      <div class="full-map-shell">
+        <div id="map_katarina" class="leaflet-map"></div>
       </div>
       <div class="map-shell">
         <h3>Lokacije</h3>
         <p class="viz-list">Seznam sodelujočih srednjih šol še ni dopolnjen. Podatki bodo dodani kmalu.</p>
       </div>
+    </div>
     </div>
   </div>
 </section>
@@ -183,38 +171,6 @@ document.addEventListener("DOMContentLoaded", () => {
   showMap_map_katarina('map_katarina', 46.1199, 14.8153, 7, [
     {"name": "Seznam sodelujočih srednjih šol še ni dopolnjen", "place": "Slovenija", "type": "Dopolnitev v pripravi", "lat": 46.1199, "lng": 14.8153, "website": ""}
   ]);
-});
-</script>
-    </div>
-  </div>
-</section>
-<script>
-function showMap_map_katarina(id, centerLat, centerLng, zoom, points) {
-  const mapLayer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; OpenStreetMap'
-  });
-  const map = L.map(id, {
-    layers: [mapLayer],
-    center: [centerLat, centerLng],
-    zoom: zoom,
-    scrollWheelZoom: false,
-    preferCanvas: true,
-  });
-  const markerLayer = L.layerGroup().addTo(map);
-  points.forEach((p) => {
-    L.marker([p.lat, p.lng]).addTo(markerLayer)
-      .bindPopup(`<div class="popup-title">${p.name}</div><div class="popup-meta">${p.type}<br>${p.place}</div>`);
-  });
-  
-
-  if (points.length > 1) {
-    const bounds = L.latLngBounds(points.map(p => [p.lat, p.lng]));
-    map.fitBounds(bounds.pad(0.15));
-  }
-}
-document.addEventListener("DOMContentLoaded", () => {
-  showMap_map_katarina('map_katarina', 46.1199, 14.8153, 7, [{"name": "Seznam sodelujočih srednjih šol še ni dopolnjen", "place": "Slovenija", "type": "Dopolnitev v pripravi", "lat": 46.1199, "lng": 14.8153}]);
 });
 </script>
 
