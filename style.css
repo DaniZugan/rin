@@ -1074,21 +1074,12 @@ img{max-width:100%;display:block}
   font-size:clamp(1.45rem,2vw,2rem);
   line-height:1.18;
 }
-.catalog-current p:last-child{
-  margin:0;
+.catalog-content-text{
+  margin:.7rem 0 0;
   color:#58708b;
-  font-weight:700;
-}
-.content-group{
-  margin-bottom:1rem;
-}
-.content-group-title{
-  margin:0 0 .85rem;
-  color:#27425e;
-  background:rgba(255,255,255,.74);
-  border:1px solid #dfe8f4;
-  border-radius:18px;
-  padding:.9rem 1rem;
+  font-weight:600;
+  line-height:1.55;
+  white-space:pre-line;
 }
 .goal-cards{
   display:grid;

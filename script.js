@@ -126,32 +126,29 @@ if (catalogRoot && window.KATALOG_ZNANJA) {
 
   const renderGoals = () => {
     const { sklop, podsklop } = findSelection(activePodsklopId);
-    const goalCount = countGoals(podsklop);
+    const contentText = podsklop.skupine
+      .map((skupina) => skupina.vsebina)
+      .filter(Boolean)
+      .join('\n\n');
     currentSklop.textContent = `${activePeriod} / ${sklop.title}`;
     currentPodsklop.textContent = podsklop.title;
-    currentMeta.textContent = `${goalCount} ${goalCount === 1 ? 'učni cilj' : goalCount === 2 ? 'učna cilja' : goalCount < 5 ? 'učni cilji' : 'učnih ciljev'}`;
+    currentMeta.textContent = contentText;
+    currentMeta.hidden = !contentText;
 
-    goals.innerHTML = podsklop.skupine.map((skupina) => `
-      <div class="content-group">
-        ${skupina.vsebina ? `<p class="content-group-title">${escapeHtml(skupina.vsebina)}</p>` : ''}
-        <div class="goal-cards">
-          ${skupina.cilji.map((cilj) => `
-            <details class="goal-card">
-              <summary>${escapeHtml(cilj.cilj)}</summary>
-              <div class="goal-detail-grid">
-                <div class="goal-detail">
-                  <h4>Razlaga</h4>
-                  <p>${escapeHtml(cilj.razlaga || 'Razlaga ni dodana.')}</p>
-                </div>
-                <div class="goal-detail">
-                  <h4>Primeri</h4>
-                  <p>${escapeHtml(cilj.primer || 'Primeri niso dodani.')}</p>
-                </div>
-              </div>
-            </details>
-          `).join('')}
+    goals.innerHTML = podsklop.skupine.flatMap((skupina) => skupina.cilji).map((cilj) => `
+      <details class="goal-card">
+        <summary>${escapeHtml(cilj.cilj)}</summary>
+        <div class="goal-detail-grid">
+          <div class="goal-detail">
+            <h4>Razlaga</h4>
+            <p>${escapeHtml(cilj.razlaga || 'Razlaga ni dodana.')}</p>
+          </div>
+          <div class="goal-detail">
+            <h4>Primeri</h4>
+            <p>${escapeHtml(cilj.primer || 'Primeri niso dodani.')}</p>
+          </div>
         </div>
-      </div>
+      </details>
     `).join('');
   };
 
