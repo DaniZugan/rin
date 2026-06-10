@@ -6,89 +6,22 @@
   <title>Katalog znanja – Računalništvo in informatika</title>
   <meta name="description" content="Pregleden katalog učnih ciljev po obdobjih, sklopih, podsklopih, razlagah in primerih." />
   <link rel="icon" type="image/png" href="assets/Slike/favicon.png" />
-  <link rel="stylesheet" href="style.css?v=20260610b" />
+  <link rel="stylesheet" href="style.css?v=20260610j" />
 </head>
 <body>
-<header class="site-header">
-  <div class="wrap nav">
-    <a href="index.html" class="brand">
-      <img src="assets/Slike/favicon.png" alt="Ikona Računalništvo in informatika">
-      <span class="brand-text">
-        <span class="brand-title">Računalništvo in informatika</span>
-        <span class="brand-sub">Skupen portal projektov in gradiv</span>
-      </span>
-    </a>
-
-    <nav class="main-nav">
-      <a class="nav-pill" href="index.html">Domov</a>
-
-      <div class="dropdown">
-        <button class="dropbtn nav-pill" aria-haspopup="true" aria-expanded="false">
-          <span>Projekti</span>
-          <svg class="chev" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 7.5 10 12.5 15 7.5"/></svg>
-        </button>
-        <div class="dropdown-menu">
-          <a href="racek.html">RAČek</a>
-          <a href="brin.html">B-RIN</a>
-          <a href="marinka.html">MARiNKA</a>
-          <a href="katarina.html">KataRINa</a>
-        </div>
-      </div>
-
-      <div class="dropdown">
-        <button class="dropbtn nav-pill" aria-haspopup="true" aria-expanded="false">
-          <span>Gradivo</span>
-          <svg class="chev" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 7.5 10 12.5 15 7.5"/></svg>
-        </button>
-        <div class="dropdown-menu">
-          <a href="#">Učni cilji</a>
-          <a href="#">Učni scenariji</a>
-          <a href="katalog-znanja.html">Katalog znanja</a>
-        </div>
-      </div>
-
-      <a class="nav-pill" href="index.html#o-portalu">O nas</a>
-      <a class="nav-pill" href="#kontakt">Kontakt</a>
-    </nav>
-
-    <button class="menu-btn" aria-label="Odpri meni">☰</button>
-  </div>
-
-  <div class="mobile-menu">
-    <a href="index.html">Domov</a>
-
-    <div class="mobile-dropdown-title">
-      <span>Projekti</span>
-      <svg class="chev" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 7.5 10 12.5 15 7.5"/></svg>
-    </div>
-    <div class="mobile-submenu">
-      <a href="racek.html">RAČek</a>
-      <a href="brin.html">B-RIN</a>
-      <a href="marinka.html">MARiNKA</a>
-      <a href="katarina.html">KataRINa</a>
-    </div>
-
-    <div class="mobile-dropdown-title">
-      <span>Gradivo</span>
-      <svg class="chev" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 7.5 10 12.5 15 7.5"/></svg>
-    </div>
-    <div class="mobile-submenu">
-      <a href="#">Učni cilji</a>
-      <a href="#">Učni scenariji</a>
-      <a href="katalog-znanja.html">Katalog znanja</a>
-    </div>
-
-    <a href="index.html#o-portalu">O nas</a>
-    <a href="#kontakt">Kontakt</a>
-  </div>
-</header>
+<div id="site-header"></div>
 
 <main id="top">
   <section id="katalog-znanja" class="catalog-section" data-knowledge-catalog>
     <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Katalog temeljnih vsebin</p>
-        <h2>Učni cilji po sklopih</h2>
+      <div class="section-head catalog-page-head">
+        <div class="catalog-title-row">
+          <div>
+            <p class="eyebrow">Katalog temeljnih vsebin</p>
+            <h2 id="catalogPageTitle">Katalog temeljnih vsebin in učnih ciljev RIN za predšolsko obdobje</h2>
+          </div>
+          <img id="catalogPageLogo" class="catalog-page-logo" src="assets/Slike/logo-brin.png" alt="Logotip projekta B-RIN">
+        </div>
         <div id="catalogPeriodTabs" class="catalog-period-tabs" aria-label="Izbira obdobja"></div>
       </div>
 
@@ -109,48 +42,12 @@
     </div>
   </section>
 
-  <section class="footer-strip-section wrap">
-    <div class="footer-strip-box">
-      <img src="assets/Slike/footer-strip.png" alt="Logotipi financerjev">
-    </div>
-  </section>
 </main>
 
-<footer id="kontakt" class="site-footer">
-  <div class="wrap footer-grid">
-    <div>
-      <h3>Računalništvo in informatika</h3>
-      <p>Portal povezuje projekte RAČek, B-RIN, MARiNKA in KataRINa ter podpira razvoj temeljnih vsebin računalništva in informatike v slovenskem vzgojno-izobraževalnem prostoru.</p>
-    </div>
-    <div>
-      <h4>Projekti</h4>
-      <ul>
-        <li><a href="racek.html">RAČek</a></li>
-        <li><a href="brin.html">B-RIN</a></li>
-        <li><a href="marinka.html">MARiNKA</a></li>
-        <li><a href="katarina.html">KataRINa</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Gradivo</h4>
-      <ul>
-        <li><a href="#">Učni cilji</a></li>
-        <li><a href="#">Učni scenariji</a></li>
-        <li><a href="katalog-znanja.html">Katalog znanja</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Kontakt</h4>
-      <p>Tukaj lahko dodaš uradni kontakt, e-pošto ali naslov.</p>
-    </div>
-  </div>
-  <div class="wrap footer-bottom">
-    <p>© 2026 Računalništvo in informatika</p>
-    <a href="#top">Nazaj na vrh</a>
-  </div>
-</footer>
+<div id="site-footer"></div>
 
-<script src="assets/Gradiva/katalog-znanja.js?v=20260610b"></script>
-<script src="script.js?v=20260610b"></script>
+<script src="assets/Gradiva/katalog-znanja.js?v=20260610j"></script>
+<script src="includes.js?v=20260610j"></script>
+<script src="script.js?v=20260610j"></script>
 </body>
 </html>

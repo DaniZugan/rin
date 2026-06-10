@@ -1,10 +1,40 @@
+const initSiteHeader = () => {
+  const btn = document.querySelector('.menu-btn');
+  const mobile = document.querySelector('.mobile-menu');
+  if (btn && mobile && !btn.dataset.ready) {
+    btn.dataset.ready = 'true';
+    btn.addEventListener('click', () => mobile.classList.toggle('open'));
+    mobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobile.classList.remove('open')));
+  }
 
-const btn = document.querySelector('.menu-btn');
-const mobile = document.querySelector('.mobile-menu');
-if (btn && mobile) {
-  btn.addEventListener('click', () => mobile.classList.toggle('open'));
-  mobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobile.classList.remove('open')));
-}
+  document.querySelectorAll('.main-nav .dropdown').forEach((dd) => {
+    if (dd.dataset.ready) return;
+    dd.dataset.ready = 'true';
+    const btn = dd.querySelector('.dropbtn');
+    const isTouch = window.matchMedia('(hover: none)').matches;
+
+    if (isTouch && btn) {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        document.querySelectorAll('.main-nav .dropdown').forEach((other) => {
+          if (other !== dd) other.classList.remove('open');
+        });
+        dd.classList.toggle('open');
+      });
+    }
+
+    dd.addEventListener('mouseenter', () => {
+      if (!isTouch) dd.classList.add('open');
+    });
+    dd.addEventListener('mouseleave', () => {
+      if (!isTouch) dd.classList.remove('open');
+    });
+  });
+};
+
+initSiteHeader();
+document.addEventListener('site:includes-loaded', initSiteHeader);
 
 const counters = document.querySelectorAll('[data-count]');
 if (counters.length) {
@@ -30,34 +60,6 @@ if (counters.length) {
   }, { threshold: 0.45 });
   counters.forEach(c => io.observe(c));
 }
-
-
-
-
-// modern dropdown behavior: hover on desktop, click on touch/mobile
-document.querySelectorAll('.main-nav .dropdown').forEach((dd) => {
-  const btn = dd.querySelector('.dropbtn');
-  const isTouch = window.matchMedia('(hover: none)').matches;
-
-  if (isTouch && btn) {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      document.querySelectorAll('.main-nav .dropdown').forEach((other) => {
-        if (other !== dd) other.classList.remove('open');
-      });
-      dd.classList.toggle('open');
-    });
-  }
-
-  dd.addEventListener('mouseenter', () => {
-    if (!isTouch) dd.classList.add('open');
-  });
-  dd.addEventListener('mouseleave', () => {
-    if (!isTouch) dd.classList.remove('open');
-  });
-});
-
 document.addEventListener('click', () => {
   if (window.matchMedia('(hover: none)').matches) {
     document.querySelectorAll('.main-nav .dropdown').forEach((dd) => dd.classList.remove('open'));
@@ -69,10 +71,34 @@ if (catalogRoot && window.KATALOG_ZNANJA) {
   const nav = catalogRoot.querySelector('#catalogNav');
   const goals = catalogRoot.querySelector('#catalogGoals');
   const periodTabs = catalogRoot.querySelector('#catalogPeriodTabs');
+  const pageTitle = catalogRoot.querySelector('#catalogPageTitle');
+  const pageLogo = catalogRoot.querySelector('#catalogPageLogo');
   const currentSklop = catalogRoot.querySelector('#catalogCurrentSklop');
   const currentPodsklop = catalogRoot.querySelector('#catalogCurrentPodsklop');
   const currentMeta = catalogRoot.querySelector('#catalogCurrentMeta');
   const periods = ['OBDP', 'OBD1', 'OBD2', 'OBD3'];
+  const periodMeta = {
+    OBDP: {
+      title: 'Katalog temeljnih vsebin in učnih ciljev RIN za predšolsko obdobje',
+      logo: 'assets/Slike/logo-brin.png',
+      logoAlt: 'Logotip projekta B-RIN',
+    },
+    OBD1: {
+      title: 'Katalog temeljnih vsebin in učnih ciljev za prvo vzgojno-izobraževalno obdobje osnovne šole (1. - 3. razred)',
+      logo: 'assets/Slike/logo-brin.png',
+      logoAlt: 'Logotip projekta B-RIN',
+    },
+    OBD2: {
+      title: 'Katalog temeljnih vsebin in učnih ciljev za drugo vzgojno-izobraževalno obdobje osnovne šole (4. - 6. razred)',
+      logo: 'assets/Slike/logo-marinka.png',
+      logoAlt: 'Logotip projekta MARiNKA',
+    },
+    OBD3: {
+      title: 'Katalog temeljnih vsebin in učnih ciljev za tretje vzgojno-izobraževalno obdobje osnovne šole (7. - 9. razred)',
+      logo: 'assets/Slike/logo-marinka.png',
+      logoAlt: 'Logotip projekta MARiNKA',
+    },
+  };
 
   const escapeHtml = (value) => String(value || '')
     .replaceAll('&', '&amp;')
@@ -86,8 +112,8 @@ if (catalogRoot && window.KATALOG_ZNANJA) {
 
   const getPeriodFromUrl = () => {
     const params = new URLSearchParams(window.location.search);
-    const period = String(params.get('obd') || 'OBD3').toUpperCase();
-    return periods.includes(period) && window.KATALOG_ZNANJA[period] ? period : 'OBD3';
+    const period = String(params.get('obd') || 'OBDP').toUpperCase();
+    return periods.includes(period) && window.KATALOG_ZNANJA[period] ? period : 'OBDP';
   };
 
   let activePeriod = getPeriodFromUrl();
@@ -103,6 +129,16 @@ if (catalogRoot && window.KATALOG_ZNANJA) {
   };
 
   let activePodsklopId = activeCatalog[0].podsklopi[0].id;
+
+  const renderPeriodMeta = () => {
+    const meta = periodMeta[activePeriod];
+    catalogRoot.classList.remove('catalog-theme-obdp', 'catalog-theme-obd1', 'catalog-theme-obd2', 'catalog-theme-obd3');
+    catalogRoot.classList.add(`catalog-theme-${activePeriod.toLowerCase()}`);
+    pageTitle.textContent = meta.title;
+    pageLogo.src = meta.logo;
+    pageLogo.alt = meta.logoAlt;
+    document.title = `${meta.title} – Računalništvo in informatika`;
+  };
 
   const renderPeriodTabs = () => {
     periodTabs.innerHTML = periods.map((period) => `
@@ -168,6 +204,7 @@ if (catalogRoot && window.KATALOG_ZNANJA) {
     activeCatalog = window.KATALOG_ZNANJA[activePeriod];
     activePodsklopId = activeCatalog[0].podsklopi[0].id;
     window.history.pushState({}, '', `katalog-znanja.html?obd=${activePeriod}`);
+    renderPeriodMeta();
     renderPeriodTabs();
     renderNav();
     renderGoals();
@@ -177,12 +214,54 @@ if (catalogRoot && window.KATALOG_ZNANJA) {
     activePeriod = getPeriodFromUrl();
     activeCatalog = window.KATALOG_ZNANJA[activePeriod];
     activePodsklopId = activeCatalog[0].podsklopi[0].id;
+    renderPeriodMeta();
     renderPeriodTabs();
     renderNav();
     renderGoals();
   });
 
+  renderPeriodMeta();
   renderPeriodTabs();
   renderNav();
   renderGoals();
+}
+
+const scenariosRoot = document.querySelector('[data-scenarios-page]');
+if (scenariosRoot && Array.isArray(window.RACEK_SCENARIJI)) {
+  const cards = scenariosRoot.querySelector('#scenarioCards');
+  const count = scenariosRoot.querySelector('#scenarioCount');
+
+  const escapeHtml = (value) => String(value || '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+
+  const pdfHref = (path) => encodeURI(path);
+  const formatAuthors = (value) => String(value || '').split('\n').filter(Boolean).join(', ');
+
+  count.textContent = `${window.RACEK_SCENARIJI.length} učnih scenarijev`;
+  cards.innerHTML = window.RACEK_SCENARIJI.map((item) => `
+    <article class="scenario-card">
+      <div class="scenario-card-top">
+        <p class="scenario-viz">${escapeHtml(item.viz)}</p>
+        <h2>${escapeHtml(item.naslov)}</h2>
+      </div>
+      <p class="scenario-summary">${escapeHtml(item.povzetek)}</p>
+      <dl class="scenario-meta">
+        <div>
+          <dt>Ključne besede</dt>
+          <dd>${escapeHtml(item.kljucneBesede)}</dd>
+        </div>
+        <div>
+          <dt>Avtorji</dt>
+          <dd>${escapeHtml(formatAuthors(item.avtorji))}</dd>
+        </div>
+      </dl>
+      <a class="btn scenario-download" href="${escapeHtml(pdfHref(item.pdf))}" download>
+        Prenesi PDF
+      </a>
+    </article>
+  `).join('');
 }
