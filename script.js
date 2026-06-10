@@ -79,22 +79,22 @@ if (catalogRoot && window.KATALOG_ZNANJA) {
   const periods = ['OBDP', 'OBD1', 'OBD2', 'OBD3'];
   const periodMeta = {
     OBDP: {
-      title: 'Katalog temeljnih vsebin in učnih ciljev RIN za predšolsko obdobje',
+      title: 'Predšolsko obdobje',
       logo: 'assets/Slike/logo-brin.png',
       logoAlt: 'Logotip projekta B-RIN',
     },
     OBD1: {
-      title: 'Katalog temeljnih vsebin in učnih ciljev za prvo vzgojno-izobraževalno obdobje osnovne šole (1. - 3. razred)',
+      title: 'Prvo vzgojno-izobraževalno obdobje osnovne šole (1. - 3. razred)',
       logo: 'assets/Slike/logo-brin.png',
       logoAlt: 'Logotip projekta B-RIN',
     },
     OBD2: {
-      title: 'Katalog temeljnih vsebin in učnih ciljev za drugo vzgojno-izobraževalno obdobje osnovne šole (4. - 6. razred)',
+      title: 'Drugo vzgojno-izobraževalno obdobje osnovne šole (4. - 6. razred)',
       logo: 'assets/Slike/logo-marinka.png',
       logoAlt: 'Logotip projekta MARiNKA',
     },
     OBD3: {
-      title: 'Katalog temeljnih vsebin in učnih ciljev za tretje vzgojno-izobraževalno obdobje osnovne šole (7. - 9. razred)',
+      title: 'Tretje vzgojno-izobraževalno obdobje osnovne šole (7. - 9. razred)',
       logo: 'assets/Slike/logo-marinka.png',
       logoAlt: 'Logotip projekta MARiNKA',
     },
