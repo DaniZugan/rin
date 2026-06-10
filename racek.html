@@ -44,7 +44,7 @@
         <div class="dropdown-menu">
           <a href="#">Učni cilji</a>
           <a href="#">Učni scenariji</a>
-          <a href="#">Katalog znanja</a>
+          <a href="katalog-znanja.html">Katalog znanja</a>
         </div>
       </div>
 
@@ -76,7 +76,7 @@
     <div class="mobile-submenu">
       <a href="#">Učni cilji</a>
       <a href="#">Učni scenariji</a>
-      <a href="#">Katalog znanja</a>
+      <a href="katalog-znanja.html">Katalog znanja</a>
     </div>
 
     <a href="index.html#o-portalu">O nas</a>
@@ -162,11 +162,18 @@ function showMap_map_racek(id, centerLat, centerLng, zoom, points) {
     preferCanvas: true,
   });
   const markerLayer = L.layerGroup().addTo(map);
+  const markerIcon = L.divIcon({
+    className: 'project-map-marker racek-marker',
+    html: '<span></span>',
+    iconSize: [30, 40],
+    iconAnchor: [15, 40],
+    popupAnchor: [0, -34],
+  });
   points.forEach((p) => {
     const popupContent = p.website 
       ? `<div class="popup-title"><a href="${p.website}" target="_blank" rel="noopener">${p.name}</a></div><div class="popup-meta">${p.type}<br>${p.place}</div>`
       : `<div class="popup-title">${p.name}</div><div class="popup-meta">${p.type}<br>${p.place}</div>`;
-    L.marker([p.lat, p.lng]).addTo(markerLayer)
+    L.marker([p.lat, p.lng], {icon: markerIcon}).addTo(markerLayer)
       .bindPopup(popupContent);
   });
   
@@ -217,7 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <ul>
         <li><a href="#">Učni cilji</a></li>
         <li><a href="#">Učni scenariji</a></li>
-        <li><a href="#">Katalog znanja</a></li>
+        <li><a href="katalog-znanja.html">Katalog znanja</a></li>
       </ul>
     </div>
     <div>
