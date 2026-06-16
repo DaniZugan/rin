@@ -1186,6 +1186,32 @@ img{max-width:100%;display:block}
   color:#40556d;
   white-space:pre-line;
 }
+.goal-rich-text{
+  margin:0;
+  color:#40556d;
+  white-space:pre-line;
+}
+.catalog-media{
+  margin:.75rem 0 0;
+  white-space:normal;
+}
+.catalog-media img{
+  width:100%;
+  height:auto;
+  border:1px solid #dce7f3;
+  border-radius:12px;
+  background:#fff;
+  box-shadow:0 8px 24px rgba(12,37,72,.08);
+}
+.catalog-media-link{
+  display:inline-flex;
+  align-items:center;
+  margin:.5rem 0;
+  color:#0b63b6;
+  font-weight:700;
+  white-space:normal;
+  word-break:break-word;
+}
 @media (max-width: 980px){
   .catalog-layout{
     grid-template-columns:1fr;

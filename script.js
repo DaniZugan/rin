@@ -107,6 +107,76 @@ if (catalogRoot && window.KATALOG_ZNANJA) {
     .replaceAll('"', '&quot;')
     .replaceAll("'", '&#039;');
 
+  const catalogMediaBase = 'assets/Katalog-slike/';
+  const catalogMediaFiles = [
+    'OBD2_Omrezja in internet_Omrezne komunikacije in organizacija_C5.png',
+    'OBD2_Racunalniski sistemi_Strojna in programska oprema_C1.png',
+    'OBD3_Omrezja_in_internet_Kibernetska_varnost_C2_primer_dejavnosti.docx',
+    'OBD3_Omrezja_in_internet_Kibernetska_varnost_C2_primer_dejavnosti.pdf',
+    'OBD3_Omrezja_in_internet_Omrezne_komunikacije_C3_primer_dejavnosti.docx',
+    'OBD3_Omrezja_in_internet_Omrezne_komunikacije_C3_primer_dejavnosti.pdf',
+    'OBD3_Podatki_in_analiza_Shranjevanje_C1_slika1.jpg',
+    'OBD3_Podatki_in_analiza_Zbiranje_C2_slika1_page-0001.jpg',
+    'OBD3_Podatki_in_analiza_Zbiranje_C2_slika2_page-0001.jpg',
+    'OBD3_Podatki_in_analiza_Zbiranje_C2_slika3_page-0001.jpg',
+  ];
+  const catalogMediaPattern = new RegExp(
+    catalogMediaFiles
+      .map((fileName) => fileName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+      .join('|'),
+    'g'
+  );
+  const getCatalogMediaHref = (fileName) => catalogMediaBase + encodeURIComponent(fileName);
+  const isCatalogImage = (fileName) => /\.(png|jpe?g|gif|webp|svg)$/i.test(fileName);
+
+  const renderCatalogMedia = (fileName) => {
+    const href = escapeHtml(getCatalogMediaHref(fileName));
+    const label = escapeHtml(fileName);
+
+    if (isCatalogImage(fileName)) {
+      return `
+        <figure class="catalog-media">
+          <a href="${href}" target="_blank" rel="noopener">
+            <img src="${href}" alt="${label}" loading="lazy">
+          </a>
+        </figure>
+      `;
+    }
+
+    return `
+      <a class="catalog-media-link" href="${href}" target="_blank" rel="noopener">
+        Odpri gradivo
+      </a>
+    `;
+  };
+
+  const renderCatalogText = (value, fallback) => {
+    const text = String(value || fallback || '');
+    if (!text || !catalogMediaPattern.test(text)) {
+      catalogMediaPattern.lastIndex = 0;
+      return escapeHtml(text);
+    }
+
+    catalogMediaPattern.lastIndex = 0;
+    let lastIndex = 0;
+    const parts = [];
+
+    text.replace(catalogMediaPattern, (fileName, offset) => {
+      const beforeMedia = text
+        .slice(lastIndex, offset)
+        .replace(/Glej sliko:\s*$/i, '');
+
+      parts.push(escapeHtml(beforeMedia));
+      parts.push(renderCatalogMedia(fileName));
+      lastIndex = offset + fileName.length;
+      return fileName;
+    });
+    parts.push(escapeHtml(text.slice(lastIndex)));
+
+    catalogMediaPattern.lastIndex = 0;
+    return parts.join('');
+  };
+
   const countGoals = (podsklop) => podsklop.skupine
     .reduce((total, skupina) => total + skupina.cilji.length, 0);
 
@@ -177,11 +247,11 @@ if (catalogRoot && window.KATALOG_ZNANJA) {
         <div class="goal-detail-grid">
           <div class="goal-detail">
             <h4>Razlaga</h4>
-            <p>${escapeHtml(cilj.razlaga || 'Razlaga ni dodana.')}</p>
+            <div class="goal-rich-text">${renderCatalogText(cilj.razlaga, 'Razlaga ni dodana.')}</div>
           </div>
           <div class="goal-detail">
             <h4>Primeri</h4>
-            <p>${escapeHtml(cilj.primer || 'Primeri niso dodani.')}</p>
+            <div class="goal-rich-text">${renderCatalogText(cilj.primer, 'Primeri niso dodani.')}</div>
           </div>
         </div>
       </details>

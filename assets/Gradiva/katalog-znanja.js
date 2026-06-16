@@ -1260,8 +1260,8 @@ window.KATALOG_ZNANJA = {
                   "primer": "Učenci predstavljajo usmerjevalnike. Pošiljatelj preda \"paket\" prvemu učencu, ta pa ga glede na naslov prejemnika posreduje naslednjemu. Na koncu razred nariše pot paketa od pošiljatelja do prejemnika. Igra predstavljena na zaključni konferenci."
                 },
                 {
-                  "cilj": "5. Učenec razume, da lahko paketi od pošiljatelja do prejemnika potujejo po različnih poteh.\n\nGlej sliko: OBD2_Omrezja in internet_Omrezne komunikacije in organizacija_C5.png\n\nPrimeri različnih poti potovanja paketov od pošiljatelja do prejemnika.",
-                  "razlaga": "",
+                  "cilj": "5. Učenec razume, da lahko paketi od pošiljatelja do prejemnika potujejo po različnih poteh.",
+                  "razlaga": "Glej sliko: OBD2_Omrezja in internet_Omrezne komunikacije in organizacija_C5.png\n\nPrimeri različnih poti potovanja paketov od pošiljatelja do prejemnika.",
                   "primer": "Učenci predstavljajo usmerjevalnike. Pošiljatelj preda \"paket\" prvemu učencu, ta pa ga glede na naslov prejemnika posreduje naslednjemu. Na koncu razred nariše pot paketa od pošiljatelja do prejemnika."
                 },
                 {
@@ -1504,7 +1504,7 @@ window.KATALOG_ZNANJA = {
                 },
                 {
                   "cilj": "2. Učenec razume, da se podatki pri zbiranju preoblikujejo v obliko, ki jo lahko računalnik nadalje obdeluje.",
-                  "razlaga": "Analogna vrednost podatka se preoblikuje v digitalno obliko:\n\nJakost signala (napetost, višina vode,...) se pretvori v številsko vrednost.\n\nNpr. digitalizacija nihala: odčitaš črtico, ki jo je še videt (skrajno levo in skrajno desno) oz. številko, ki je pri črtici napisana = digitaliziraš podatek\n\nGlej sliko: OBD3_Podatki_in_analiza_Zbiranje_C2_slika1.pdf\n\nTermometer : analogni bo pokazal črtico do kod gre, digitalni pa bo odčital številko, ki je zapisana.\n\nSočna ura je edina v celoti analogna, druge so načeloma vse digitalne, ker odčitavamo številke; torej odčitek je vedno digitalen, ker ga označujemo s številke\n\nGlej sliko: OBD3_Podatki_in_analiza_Zbiranje_C2_slika2.pdf\n\nFizično računalništvo: rdeče dodaš trak senzorjev, ki odčita jakost svetlobnega toka in veš, ali si ali nisi v senci; večji kot so senzorji, bolj natančna je meritev.\n\nGlej sliko: OBD3-Podatki_in_analiza_Zbiranje_C2_slika3.pdf",
+                  "razlaga": "Analogna vrednost podatka se preoblikuje v digitalno obliko:\n\nJakost signala (napetost, višina vode,...) se pretvori v številsko vrednost.\n\nNpr. digitalizacija nihala: odčitaš črtico, ki jo je še videt (skrajno levo in skrajno desno) oz. številko, ki je pri črtici napisana = digitaliziraš podatek\n\nGlej sliko: OBD3_Podatki_in_analiza_Zbiranje_C2_slika1_page-0001.jpg\n\nTermometer : analogni bo pokazal črtico do kod gre, digitalni pa bo odčital številko, ki je zapisana.\n\nSočna ura je edina v celoti analogna, druge so načeloma vse digitalne, ker odčitavamo številke; torej odčitek je vedno digitalen, ker ga označujemo s številke\n\nGlej sliko: OBD3_Podatki_in_analiza_Zbiranje_C2_slika2_page-0001.jpg\n\nFizično računalništvo: rdeče dodaš trak senzorjev, ki odčita jakost svetlobnega toka in veš, ali si ali nisi v senci; večji kot so senzorji, bolj natančna je meritev.\n\nGlej sliko: OBD3_Podatki_in_analiza_Zbiranje_C2_slika3_page-0001.jpg",
                   "primer": "C2: - Učenci uporabijo aplikacijo, ki avtomatično zbira določene podatke (npr. Open GPS Tracker, GPS Essentials).\n- Podatki, ki jih učenci zbirajo s spletno anketo, so preoblikovani in na voljo v obliki preglednice."
                 },
                 {
