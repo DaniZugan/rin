@@ -329,8 +329,8 @@ if (scenariosRoot && Array.isArray(window.RACEK_SCENARIJI)) {
           <dd>${escapeHtml(formatAuthors(item.avtorji))}</dd>
         </div>
       </dl>
-      <a class="btn scenario-download" href="${escapeHtml(pdfHref(item.pdf))}" download>
-        Prenesi PDF
+      <a class="btn scenario-download" href="${escapeHtml(pdfHref(item.pdf))}" target="_blank" rel="noopener">
+        Odpri PDF
       </a>
     </article>
   `).join('');
