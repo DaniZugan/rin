@@ -99,10 +99,10 @@ function showMap_map_katarina(id, centerLat, centerLng, zoom, points) {
     popupAnchor: [0, -34],
   });
   points.forEach((p) => {
-    const address = p.address ? `<br>${p.address}` : '';
+    const address = p.address ? `<div class="popup-meta">${p.address}</div>` : '';
     const popupContent = p.website 
-      ? `<div class="popup-title"><a href="${p.website}" target="_blank" rel="noopener">${p.name}</a></div><div class="popup-meta">${p.type}<br>${p.place}${address}</div>`
-      : `<div class="popup-title">${p.name}</div><div class="popup-meta">${p.type}<br>${p.place}${address}</div>`;
+      ? `<div class="popup-title"><a href="${p.website}" target="_blank" rel="noopener">${p.name}</a></div>${address}`
+      : `<div class="popup-title">${p.name}</div>${address}`;
     L.marker([p.lat, p.lng], {icon: markerIcon}).addTo(markerLayer)
       .bindPopup(popupContent);
   });
