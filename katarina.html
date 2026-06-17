@@ -60,7 +60,18 @@
         <div id="map_katarina" class="leaflet-map"></div>
       </div>
       <div class="map-shell">
-        <p class="viz-list">Seznam sodelujočih srednjih šol še ni dopolnjen. Podatki bodo dodani kmalu.</p>
+        <ul class="viz-list">
+          <li><a href="https://www.gimvic.org/dejavnosti/projekti/katarina/" target="_blank" rel="noopener">Gimnazija Vič</a></li>
+          <li><a href="https://www.gimkr.si/dejavnosti-in-projekti/projekti/projekt-katarina/" target="_blank" rel="noopener">Gimnazija Kranj</a></li>
+          <li><a href="https://gimnazija-ormoz.splet.arnes.si/projekt-katarina/" target="_blank" rel="noopener">Gimnazija Ormož</a></li>
+          <li><a href="https://gimnazija-skofjaloka.si/dejavnosti/projekt-katarina/" target="_blank" rel="noopener">Gimnazija Škofja Loka</a></li>
+          <li><a href="https://www.druga.si/o-soli/sola/projekt-katarina/" target="_blank" rel="noopener">II. gimnazija Maribor</a></li>
+          <li><a href="https://www.gfp.si/projekti/katarina" target="_blank" rel="noopener">Gimnazija Franceta Prešerna, Kranj</a></li>
+          <li><a href="https://ker.sc-celje.si/projekti/nacionalni-projekti/razvoj-temeljnih-vsebin-in-znanj-racunalnistva-in-informatike-v-srednjih-solah-katarina/" target="_blank" rel="noopener">Šolski center Celje, Srednja šola za kemijo, elektrotehniko in računalništvo</a></li>
+          <li><a href="https://www.prvagim.si/projekt-katarina" target="_blank" rel="noopener">I. gimnazija v Celju</a></li>
+          <li><a href="https://katarina.ledina.si/" target="_blank" rel="noopener">Gimnazija Ledina</a></li>
+          <li><a href="https://ers.scv.si/osnovni-podatki/projekti-2/" target="_blank" rel="noopener">Šolski center Velenje, Elektro in računalniška šola</a></li>
+        </ul>
       </div>
     </div>
     </div>
@@ -88,9 +99,10 @@ function showMap_map_katarina(id, centerLat, centerLng, zoom, points) {
     popupAnchor: [0, -34],
   });
   points.forEach((p) => {
+    const address = p.address ? `<br>${p.address}` : '';
     const popupContent = p.website 
-      ? `<div class="popup-title"><a href="${p.website}" target="_blank" rel="noopener">${p.name}</a></div><div class="popup-meta">${p.type}<br>${p.place}</div>`
-      : `<div class="popup-title">${p.name}</div><div class="popup-meta">${p.type}<br>${p.place}</div>`;
+      ? `<div class="popup-title"><a href="${p.website}" target="_blank" rel="noopener">${p.name}</a></div><div class="popup-meta">${p.type}<br>${p.place}${address}</div>`
+      : `<div class="popup-title">${p.name}</div><div class="popup-meta">${p.type}<br>${p.place}${address}</div>`;
     L.marker([p.lat, p.lng], {icon: markerIcon}).addTo(markerLayer)
       .bindPopup(popupContent);
   });
@@ -102,8 +114,17 @@ function showMap_map_katarina(id, centerLat, centerLng, zoom, points) {
   }
 }
 document.addEventListener("DOMContentLoaded", () => {
-  showMap_map_katarina('map_katarina', 46.1199, 14.8153, 7, [
-    {"name": "Seznam sodelujočih srednjih šol še ni dopolnjen", "place": "Slovenija", "type": "Dopolnitev v pripravi", "lat": 46.1199, "lng": 14.8153, "website": ""}
+  showMap_map_katarina('map_katarina', 46.1199, 14.8153, 8, [
+    {"name": "Gimnazija Vič", "place": "Ljubljana", "type": "Gimnazija", "lat": 46.0433685, "lng": 14.4802907, "address": "Tržaška cesta 72, 1000 Ljubljana", "website": "https://www.gimvic.org/dejavnosti/projekti/katarina/"},
+    {"name": "Gimnazija Kranj", "place": "Kranj", "type": "Gimnazija", "lat": 46.2425772, "lng": 14.3546633, "address": "Koroška cesta 13, 4000 Kranj", "website": "https://www.gimkr.si/dejavnosti-in-projekti/projekti/projekt-katarina/"},
+    {"name": "Gimnazija Ormož", "place": "Ormož", "type": "Gimnazija", "lat": 46.4103794, "lng": 16.1539446, "address": "Hardek 5a, 2270 Ormož", "website": "https://gimnazija-ormoz.splet.arnes.si/projekt-katarina/"},
+    {"name": "Gimnazija Škofja Loka", "place": "Škofja Loka", "type": "Gimnazija", "lat": 46.1695257, "lng": 14.3027820, "address": "Podlubnik 1b, 4220 Škofja Loka", "website": "https://gimnazija-skofjaloka.si/dejavnosti/projekt-katarina/"},
+    {"name": "II. gimnazija Maribor", "place": "Maribor", "type": "Gimnazija", "lat": 46.5487780, "lng": 15.6442148, "address": "Trg Miloša Zidanška 1, 2000 Maribor", "website": "https://www.druga.si/o-soli/sola/projekt-katarina/"},
+    {"name": "Gimnazija Franceta Prešerna, Kranj", "place": "Kranj", "type": "Gimnazija", "lat": 46.2530328, "lng": 14.3507979, "address": "Kidričeva cesta 65, 4000 Kranj", "website": "https://www.gfp.si/projekti/katarina"},
+    {"name": "Šolski center Celje, Srednja šola za kemijo, elektrotehniko in računalništvo", "place": "Celje", "type": "Srednja šola", "lat": 46.2355290, "lng": 15.2569404, "address": "Pot na Lavo 22, 3000 Celje", "website": "https://ker.sc-celje.si/projekti/nacionalni-projekti/razvoj-temeljnih-vsebin-in-znanj-racunalnistva-in-informatike-v-srednjih-solah-katarina/"},
+    {"name": "I. gimnazija v Celju", "place": "Celje", "type": "Gimnazija", "lat": 46.2313151, "lng": 15.2573676, "address": "Kajuhova 2, 3000 Celje", "website": "https://www.prvagim.si/projekt-katarina"},
+    {"name": "Gimnazija Ledina", "place": "Ljubljana", "type": "Gimnazija", "lat": 46.0537382, "lng": 14.5107213, "address": "Resljeva cesta 12, 1000 Ljubljana", "website": "https://katarina.ledina.si/"},
+    {"name": "Šolski center Velenje, Elektro in računalniška šola", "place": "Velenje", "type": "Srednja šola", "lat": 46.3617082, "lng": 15.1133627, "address": "Trg mladosti 3, 3320 Velenje", "website": "https://ers.scv.si/osnovni-podatki/projekti-2/"}
   ]);
 });
 </script>
