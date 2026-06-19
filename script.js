@@ -113,6 +113,8 @@ if (catalogRoot && window.KATALOG_ZNANJA) {
     'OBD2_Racunalniski sistemi_Strojna in programska oprema_C1.png',
     'OBD3_Omrezja_in_internet_Kibernetska_varnost_C2_primer_dejavnosti.docx',
     'OBD3_Omrezja_in_internet_Kibernetska_varnost_C2_primer_dejavnosti.pdf',
+    'OBD3_Algoritmi_in_programiranje_Algoritmi_C2_slika1.jpg',
+    'OBD3_Omrezja_in_internet_Omrezne_komunikacije_C2_slika1.jpg',
     'OBD3_Omrezja_in_internet_Omrezne_komunikacije_C3_primer_dejavnosti.docx',
     'OBD3_Omrezja_in_internet_Omrezne_komunikacije_C3_primer_dejavnosti.pdf',
     'OBD3_Podatki_in_analiza_Shranjevanje_C1_slika1.jpg',
