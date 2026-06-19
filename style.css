@@ -1148,6 +1148,19 @@ img{max-width:100%;display:block}
 .goal-card summary::-webkit-details-marker{
   display:none;
 }
+.goal-summary-content{
+  display:grid;
+  gap:.25rem;
+}
+.goal-card-eyebrow{
+  display:block;
+  color:#5f7896;
+  font-size:.72rem;
+  font-weight:900;
+  letter-spacing:.08em;
+  line-height:1;
+  text-transform:uppercase;
+}
 .goal-card summary::after{
   content:"+";
   display:grid;

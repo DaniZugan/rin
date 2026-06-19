@@ -79,22 +79,22 @@ if (catalogRoot && window.KATALOG_ZNANJA) {
   const periods = ['OBDP', 'OBD1', 'OBD2', 'OBD3'];
   const periodMeta = {
     OBDP: {
-      title: 'Predšolsko obdobje',
+      title: 'predšolsko obdobje',
       logo: 'assets/Slike/logo-brin.png',
       logoAlt: 'Logotip projekta B-RIN',
     },
     OBD1: {
-      title: 'Prvo vzgojno-izobraževalno obdobje osnovne šole (1. - 3. razred)',
+      title: 'prvo vzgojno-izobraževalno obdobje osnovne šole (1. - 3. razred)',
       logo: 'assets/Slike/logo-brin.png',
       logoAlt: 'Logotip projekta B-RIN',
     },
     OBD2: {
-      title: 'Drugo vzgojno-izobraževalno obdobje osnovne šole (4. - 6. razred)',
+      title: 'drugo vzgojno-izobraževalno obdobje osnovne šole (4. - 6. razred)',
       logo: 'assets/Slike/logo-marinka.png',
       logoAlt: 'Logotip projekta MARiNKA',
     },
     OBD3: {
-      title: 'Tretje vzgojno-izobraževalno obdobje osnovne šole (7. - 9. razred)',
+      title: 'tretje vzgojno-izobraževalno obdobje osnovne šole (7. - 9. razred)',
       logo: 'assets/Slike/logo-marinka.png',
       logoAlt: 'Logotip projekta MARiNKA',
     },
@@ -245,7 +245,12 @@ if (catalogRoot && window.KATALOG_ZNANJA) {
 
     goals.innerHTML = podsklop.skupine.flatMap((skupina) => skupina.cilji).map((cilj) => `
       <details class="goal-card">
-        <summary>${escapeHtml(cilj.cilj)}</summary>
+        <summary>
+          <span class="goal-summary-content">
+            <span class="goal-card-eyebrow">Učni cilj</span>
+            <span>${escapeHtml(cilj.cilj)}</span>
+          </span>
+        </summary>
         <div class="goal-detail-grid">
           <div class="goal-detail">
             <h4>Razlaga</h4>
