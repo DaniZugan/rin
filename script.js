@@ -73,6 +73,7 @@ if (catalogRoot && window.KATALOG_ZNANJA) {
   const periodTabs = catalogRoot.querySelector('#catalogPeriodTabs');
   const pageTitle = catalogRoot.querySelector('#catalogPageTitle');
   const pageLogo = catalogRoot.querySelector('#catalogPageLogo');
+  const pageLogoLink = catalogRoot.querySelector('#catalogPageLogoLink');
   const currentSklop = catalogRoot.querySelector('#catalogCurrentSklop');
   const currentPodsklop = catalogRoot.querySelector('#catalogCurrentPodsklop');
   const currentMeta = catalogRoot.querySelector('#catalogCurrentMeta');
@@ -82,21 +83,29 @@ if (catalogRoot && window.KATALOG_ZNANJA) {
       title: 'predšolsko obdobje',
       logo: 'assets/Slike/logo-brin.png',
       logoAlt: 'Logotip projekta B-RIN',
+      projectUrl: 'brin.html',
+      projectLabel: 'Več o projektu B-RIN',
     },
     OBD1: {
       title: 'prvo vzgojno-izobraževalno obdobje osnovne šole (1. - 3. razred)',
       logo: 'assets/Slike/logo-brin.png',
       logoAlt: 'Logotip projekta B-RIN',
+      projectUrl: 'brin.html',
+      projectLabel: 'Več o projektu B-RIN',
     },
     OBD2: {
       title: 'drugo vzgojno-izobraževalno obdobje osnovne šole (4. - 6. razred)',
       logo: 'assets/Slike/logo-marinka.png',
       logoAlt: 'Logotip projekta MARiNKA',
+      projectUrl: 'marinka.html',
+      projectLabel: 'Več o projektu MARiNKA',
     },
     OBD3: {
       title: 'tretje vzgojno-izobraževalno obdobje osnovne šole (7. - 9. razred)',
       logo: 'assets/Slike/logo-marinka.png',
       logoAlt: 'Logotip projekta MARiNKA',
+      projectUrl: 'marinka.html',
+      projectLabel: 'Več o projektu MARiNKA',
     },
   };
 
@@ -209,6 +218,10 @@ if (catalogRoot && window.KATALOG_ZNANJA) {
     pageTitle.textContent = meta.title;
     pageLogo.src = meta.logo;
     pageLogo.alt = meta.logoAlt;
+    if (pageLogoLink) {
+      pageLogoLink.href = meta.projectUrl;
+      pageLogoLink.setAttribute('aria-label', meta.projectLabel);
+    }
     document.title = `${meta.title} – Računalništvo in informatika`;
   };
 
