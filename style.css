@@ -1155,6 +1155,10 @@ img{max-width:100%;display:block}
   line-height:1;
   text-transform:uppercase;
 }
+.goal-title{
+  display:grid;
+  gap:.55rem;
+}
 .goal-card summary::after{
   content:"+";
   display:grid;
@@ -1209,6 +1213,13 @@ img{max-width:100%;display:block}
   border-radius:12px;
   background:#fff;
   box-shadow:0 8px 24px rgba(12,37,72,.08);
+}
+.catalog-media-summary{
+  display:block;
+  max-width:540px;
+}
+.catalog-media-summary img{
+  width:100%;
 }
 .catalog-media-link{
   display:inline-flex;

@@ -144,17 +144,19 @@ if (catalogRoot && window.KATALOG_ZNANJA) {
   const getCatalogMediaHref = (fileName) => catalogMediaBase + encodeURIComponent(fileName);
   const isCatalogImage = (fileName) => /\.(png|jpe?g|gif|webp|svg)$/i.test(fileName);
 
-  const renderCatalogMedia = (fileName) => {
+  const renderCatalogMedia = (fileName, isSummaryMedia = false) => {
     const href = escapeHtml(getCatalogMediaHref(fileName));
     const label = escapeHtml(fileName);
+    const mediaClass = `catalog-media${isSummaryMedia ? ' catalog-media-summary' : ''}`;
+    const mediaTag = isSummaryMedia ? 'span' : 'figure';
 
     if (isCatalogImage(fileName)) {
       return `
-        <figure class="catalog-media">
+        <${mediaTag} class="${mediaClass}">
           <a href="${href}" target="_blank" rel="noopener">
             <img src="${href}" alt="${label}" loading="lazy">
           </a>
-        </figure>
+        </${mediaTag}>
       `;
     }
 
@@ -165,7 +167,7 @@ if (catalogRoot && window.KATALOG_ZNANJA) {
     `;
   };
 
-  const renderCatalogText = (value, fallback) => {
+  const renderCatalogText = (value, fallback, options = {}) => {
     const text = String(value || fallback || '');
     if (!text || !catalogMediaPattern.test(text)) {
       catalogMediaPattern.lastIndex = 0;
@@ -182,7 +184,7 @@ if (catalogRoot && window.KATALOG_ZNANJA) {
         .replace(/Glej sliko:\s*$/i, '');
 
       parts.push(escapeHtml(beforeMedia));
-      parts.push(renderCatalogMedia(fileName));
+      parts.push(renderCatalogMedia(fileName, options.summaryMedia));
       lastIndex = offset + fileName.length;
       return fileName;
     });
@@ -261,7 +263,7 @@ if (catalogRoot && window.KATALOG_ZNANJA) {
         <summary>
           <span class="goal-summary-content">
             <span class="goal-card-eyebrow">Učni cilj</span>
-            <span>${escapeHtml(cilj.cilj)}</span>
+            <span class="goal-title">${renderCatalogText(cilj.cilj, '', { summaryMedia: true })}</span>
           </span>
         </summary>
         <div class="goal-detail-grid">
