@@ -80,6 +80,7 @@ if (catalogRoot && window.KATALOG_ZNANJA) {
   const periods = ['OBDP', 'OBD1', 'OBD2', 'OBD3'];
   const periodMeta = {
     OBDP: {
+      label: 'PO',
       title: 'predšolsko obdobje',
       logo: 'assets/Slike/logo-brin.png',
       logoAlt: 'Logotip projekta B-RIN',
@@ -87,6 +88,7 @@ if (catalogRoot && window.KATALOG_ZNANJA) {
       projectLabel: 'Več o projektu B-RIN',
     },
     OBD1: {
+      label: '1. VIO',
       title: 'prvo vzgojno-izobraževalno obdobje osnovne šole (1. - 3. razred)',
       logo: 'assets/Slike/logo-brin.png',
       logoAlt: 'Logotip projekta B-RIN',
@@ -94,6 +96,7 @@ if (catalogRoot && window.KATALOG_ZNANJA) {
       projectLabel: 'Več o projektu B-RIN',
     },
     OBD2: {
+      label: '2. VIO',
       title: 'drugo vzgojno-izobraževalno obdobje osnovne šole (4. - 6. razred)',
       logo: 'assets/Slike/logo-marinka.png',
       logoAlt: 'Logotip projekta MARiNKA',
@@ -101,6 +104,7 @@ if (catalogRoot && window.KATALOG_ZNANJA) {
       projectLabel: 'Več o projektu MARiNKA',
     },
     OBD3: {
+      label: '3. VIO',
       title: 'tretje vzgojno-izobraževalno obdobje osnovne šole (7. - 9. razred)',
       logo: 'assets/Slike/logo-marinka.png',
       logoAlt: 'Logotip projekta MARiNKA',
@@ -188,9 +192,6 @@ if (catalogRoot && window.KATALOG_ZNANJA) {
     return parts.join('');
   };
 
-  const countGoals = (podsklop) => podsklop.skupine
-    .reduce((total, skupina) => total + skupina.cilji.length, 0);
-
   const getPeriodFromUrl = () => {
     const params = new URLSearchParams(window.location.search);
     const period = String(params.get('obd') || 'OBDP').toUpperCase();
@@ -227,7 +228,7 @@ if (catalogRoot && window.KATALOG_ZNANJA) {
 
   const renderPeriodTabs = () => {
     periodTabs.innerHTML = periods.map((period) => `
-      <a class="catalog-period-tab${period === activePeriod ? ' is-active' : ''}" href="katalog-znanja.html?obd=${period}" data-period="${period}" aria-current="${period === activePeriod ? 'page' : 'false'}">${period}</a>
+      <a class="catalog-period-tab${period === activePeriod ? ' is-active' : ''}" href="katalog-znanja.html?obd=${period}" data-period="${period}" aria-current="${period === activePeriod ? 'page' : 'false'}">${periodMeta[period].label}</a>
     `).join('');
   };
 
@@ -238,7 +239,6 @@ if (catalogRoot && window.KATALOG_ZNANJA) {
         ${sklop.podsklopi.map((podsklop) => `
           <button class="catalog-subtopic-btn${podsklop.id === activePodsklopId ? ' is-active' : ''}" type="button" data-podsklop="${escapeHtml(podsklop.id)}" aria-pressed="${podsklop.id === activePodsklopId}">
             <span>${escapeHtml(podsklop.title)}</span>
-            <span class="catalog-count">${countGoals(podsklop)}</span>
           </button>
         `).join('')}
       </div>
@@ -251,7 +251,7 @@ if (catalogRoot && window.KATALOG_ZNANJA) {
       .map((skupina) => skupina.vsebina)
       .filter(Boolean)
       .join('\n\n');
-    currentSklop.textContent = `${activePeriod} / ${sklop.title}`;
+    currentSklop.textContent = `${periodMeta[activePeriod].label} / ${sklop.title}`;
     currentPodsklop.textContent = podsklop.title;
     currentMeta.textContent = contentText;
     currentMeta.hidden = !contentText;

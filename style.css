@@ -1063,7 +1063,7 @@ img{max-width:100%;display:block}
 .catalog-subtopic-btn{
   width:100%;
   display:grid;
-  grid-template-columns:1fr auto;
+  grid-template-columns:1fr;
   gap:.45rem;
   align-items:center;
   border:1px solid transparent;
@@ -1088,16 +1088,6 @@ img{max-width:100%;display:block}
   background:linear-gradient(135deg,#dbe8ff,#eef4ff);
   border-color:#bfd0ef;
   color:#0c2548;
-}
-.catalog-count{
-  min-width:2rem;
-  border-radius:999px;
-  background:#fff;
-  border:1px solid #dfe8f4;
-  padding:.1rem .45rem;
-  color:#4a6aa6;
-  font-size:.8rem;
-  text-align:center;
 }
 .catalog-results{
   min-width:0;
