@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Učni scenariji temeljnih vsebin RIN – Računalništvo in informatika</title>
+  <meta name="description" content="Opis učnih scenarijev za aktivnosti, s katerimi učenci in otroci usvajajo učne cilje temeljnih vsebin RIN." />
+  <link rel="icon" type="image/png" href="assets/Slike/favicon.png" />
+  <link rel="stylesheet" href="style.css?v=20260812k" />
+</head>
+<body>
+<div id="site-header"></div>
+
+<main id="top">
+  <section class="rin-material-section">
+    <div class="wrap">
+      <div class="rin-material-head">
+        <div>
+          <p class="eyebrow">Gradiva</p>
+          <h1>Učni scenariji</h1>
+          <p class="lead">Aktivnosti, s katerimi učenci oziroma otroci usvajajo učne cilje s področja temeljnih vsebin računalništva in informatike, so natančno predstavljene v obrazcih, imenovanih <strong>učni scenariji</strong>.</p>
+        </div>
+        <div class="rin-material-logos" aria-label="Logotipa projektov B-RIN in MARiNKA">
+          <img src="assets/Slike/logo-brin.png" alt="Logotip projekta B-RIN">
+          <img src="assets/Slike/logo-marinka.png" alt="Logotip projekta MARiNKA">
+        </div>
+      </div>
+
+      <details class="rin-material-card rin-collapse-card">
+        <summary>
+          <h2>Struktura učnega scenarija</h2>
+        </summary>
+        <div class="rin-collapse-content">
+          <p>Učni scenarij vsebuje 6 sklopov:</p>
+          <div class="scenario-structure-grid">
+            <article><span>01</span><h3>Predstavitev</h3></article>
+            <article><span>02</span><h3>Kontekst izvedbe in priprava</h3></article>
+            <article><span>03</span><h3>Namen in učni cilji (operativni)</h3></article>
+            <article><span>04</span><h3>Aktivnost</h3></article>
+            <article><span>05</span><h3>Evalvacija, refleksija</h3></article>
+            <article><span>06</span><h3>Kurikulum</h3></article>
+          </div>
+        </div>
+      </details>
+
+      <details class="rin-material-card rin-collapse-card">
+        <summary>
+          <h2>Kaj vsebuje učni scenarij?</h2>
+        </summary>
+        <div class="rin-collapse-content">
+          <p>V vsakem učnem scenariju je najprej predstavljen povzetek aktivnosti, materiali, potrebni za pripravo oziroma izvedbo aktivnosti, ter značilnosti učnega konteksta in učečih se, za katere je aktivnost razvita. Opisan je splošen namen dejavnosti ter identificirani specifični učni cilji, ki jih posamezna aktivnost naslavlja.</p>
+          <p>Natančno so opisani posamezni koraki aktivnosti ter predviden čas izvedbe aktivnosti. Vsak učni scenarij vsebuje tudi del o evalvaciji, kjer avtorji učnega scenarija kritično ovrednotijo doseganje učnih ciljev ter podajajo predloge za načine evalviranja opisane aktivnosti.</p>
+          <p>Sklop, vezan na refleksijo, bralcu učnega scenarija omogoča vpogled v doživljanje aktivnosti s strani učečih se, prav tako pa dostop do kritične samorefleksije s strani strokovnega delavca, avtorja učnega scenarija. Iz tega lahko bralec črpa priporočila za nadgradnjo ali prilagoditev učne aktivnosti za lastne potrebe. V sklepnem delu je aktivnost opredeljena še v kontekstu medpredmetnega sodelovanja ter skupnih ciljev učnih načrtov.</p>
+        </div>
+      </details>
+
+      <details class="rin-material-card rin-material-note rin-collapse-card">
+        <summary>
+          <h2>Avtorstvo in pregled</h2>
+        </summary>
+        <div class="rin-collapse-content">
+          <p>Predloga učnega scenarija je bila oblikovana v okviru razvojne skupine projekta B-RIN. Sodelovali so (po abecednem vrstnem redu): dr. Sonja Čotar Konrad, dr. Andreja Klančar, dr. Maja Lebeničnik.</p>
+          <p>Vprašanja v delu evalvacije in refleksije izvedbe učne aktivnosti so povzeta po predlogi za praktično usposabljanje v vrtcu avtorice dr. Sonje Rutar.</p>
+          <p>Pregled: dr. Tina Štemberger.</p>
+        </div>
+      </details>
+
+      <div class="rin-scenarios-list" data-rin-scenarios-page>
+        <div class="rin-scenario-filter" aria-label="Filtriranje učnih scenarijev po sklopu">
+          <p class="eyebrow">Sklop</p>
+          <div class="rin-scenario-filter-row">
+            <button class="guideline-filter is-active" type="button" data-rin-scenario-filter="vsi" aria-pressed="true">Vsi</button>
+            <button class="guideline-filter" type="button" data-rin-scenario-filter="Računalniški sistemi" aria-pressed="false">Računalniški sistemi</button>
+            <button class="guideline-filter" type="button" data-rin-scenario-filter="Podatki in analiza" aria-pressed="false">Podatki in analiza</button>
+            <button class="guideline-filter" type="button" data-rin-scenario-filter="Algoritmi in programiranje" aria-pressed="false">Algoritmi in programiranje</button>
+            <button class="guideline-filter" type="button" data-rin-scenario-filter="Omrežja in internet" aria-pressed="false">Omrežja in internet</button>
+            <button class="guideline-filter" type="button" data-rin-scenario-filter="Učinki računalništva" aria-pressed="false">Učinki računalništva</button>
+          </div>
+        </div>
+
+        <div class="scenario-toolbar rin-scenario-count">
+          <p id="rinScenarioCount"></p>
+        </div>
+
+        <div id="rinScenarioCards" class="scenario-grid rin-scenario-grid"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="includes.js?v=20260610k"></script>
+<script src="assets/Gradiva/rin-ucni-scenariji.js?v=20260812c"></script>
+<script src="script.js?v=20260812l"></script>
+</body>
+</html>

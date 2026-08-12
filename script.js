@@ -112,8 +112,6 @@ if (guidelinesRoot && window.SMER_NACRTOVANJA_RIN) {
   const data = window.SMER_NACRTOVANJA_RIN;
   const periodButtons = guidelinesRoot.querySelectorAll('[data-guidelines-period]');
   const sklopButtons = guidelinesRoot.querySelectorAll('[data-guidelines-sklop]');
-  const periodLabel = guidelinesRoot.querySelector('#guidelinePeriodLabel');
-  const title = guidelinesRoot.querySelector('#guidelineTitle');
   const body = guidelinesRoot.querySelector('#guidelineBody');
   const goalsLink = guidelinesRoot.querySelector('#guidelineGoalsLink');
   const periodIds = new Set(data.periods.map((period) => period.id));
@@ -134,11 +132,7 @@ if (guidelinesRoot && window.SMER_NACRTOVANJA_RIN) {
   const findById = (items, id) => items.find((item) => item.id === id);
 
   const renderGuideline = () => {
-    const period = findById(data.periods, activePeriod);
-    const sklop = findById(data.sklopi, activeSklop);
     const text = data.guidelines?.[activePeriod]?.[activeSklop] || '';
-    periodLabel.textContent = `${period?.label || ''} / ${period?.title || ''}`;
-    title.textContent = sklop?.label || '';
     body.innerHTML = text
       ? text.split(/\n{2,}/).map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('')
       : '<p>Smernica za izbrano kombinacijo še ni dodana.</p>';
@@ -533,4 +527,85 @@ if (scenariosRoot && Array.isArray(window.RACEK_SCENARIJI)) {
       </a>
     </article>
   `).join('');
+}
+
+const rinScenariosRoot = document.querySelector('[data-rin-scenarios-page]');
+if (rinScenariosRoot && Array.isArray(window.RIN_SCENARIJI)) {
+  const cards = rinScenariosRoot.querySelector('#rinScenarioCards');
+  const count = rinScenariosRoot.querySelector('#rinScenarioCount');
+  const filterButtons = rinScenariosRoot.querySelectorAll('[data-rin-scenario-filter]');
+  let activeFilter = 'vsi';
+
+  const escapeHtml = (value) => String(value || '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+
+  const assetHref = (path) => encodeURI(path);
+  const formatList = (values) => Array.isArray(values) && values.length ? values.join(', ') : 'Ni navedeno';
+  const formatPartner = (value) => {
+    const partner = String(value || '')
+      .replace(/^KP\s*\d{2}[ _]+/i, '')
+      .replaceAll('_', ' ')
+      .trim();
+    const schoolNames = {
+      Bled: 'OŠ Bled',
+      Trzin: 'OŠ Trzin',
+      'Voranca LJ': 'OŠ Voranca LJ',
+    };
+    return schoolNames[partner] || partner;
+  };
+
+  const renderRinScenarios = () => {
+    const filteredScenarios = activeFilter === 'vsi'
+      ? window.RIN_SCENARIJI
+      : window.RIN_SCENARIJI.filter((item) => Array.isArray(item.sklopi) && item.sklopi.includes(activeFilter));
+
+    count.textContent = `${filteredScenarios.length} učnih scenarijev`;
+    cards.innerHTML = filteredScenarios.map((item) => `
+      <article class="scenario-card">
+        <div class="scenario-card-top">
+          <p class="scenario-viz">${escapeHtml(item.obdobje || 'Temeljne vsebine RIN')}</p>
+          <h2>${escapeHtml(item.naslov)}</h2>
+          <p class="rin-grade-badge">Razred: ${escapeHtml(item.razred || 'Ni navedeno')}</p>
+        </div>
+        <dl class="scenario-meta">
+          <div>
+            <dt>Vključeni sklopi</dt>
+            <dd>${escapeHtml(formatList(item.sklopi))}</dd>
+          </div>
+          <div>
+            <dt>Konzorcijski partner</dt>
+            <dd>${escapeHtml(formatPartner(item.partner))}</dd>
+          </div>
+        </dl>
+        <div class="rin-scenario-actions">
+          <a class="btn scenario-download" href="${escapeHtml(assetHref(item.download))}" download>
+            Prenesi ${escapeHtml(item.downloadType || 'gradivo')}
+          </a>
+          ${item.video ? `
+            <a class="btn secondary rin-video-link" href="${escapeHtml(item.video)}" target="_blank" rel="noopener">
+              Odpri video
+            </a>
+          ` : ''}
+        </div>
+      </article>
+    `).join('');
+  };
+
+  filterButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      activeFilter = button.dataset.rinScenarioFilter;
+      filterButtons.forEach((item) => {
+        const isActive = item === button;
+        item.classList.toggle('is-active', isActive);
+        item.setAttribute('aria-pressed', String(isActive));
+      });
+      renderRinScenarios();
+    });
+  });
+
+  renderRinScenarios();
 }

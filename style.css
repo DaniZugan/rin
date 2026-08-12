@@ -1438,6 +1438,200 @@ img{max-width:100%;display:block}
   color:#40556d;
   line-height:1.62;
 }
+
+/* RIN learning scenario material */
+.rin-material-section{
+  padding:3.2rem 0 3rem;
+  background:linear-gradient(135deg,#dbe8ff 0%,#c5d8ff 100%);
+}
+.rin-material-head,
+.rin-material-card{
+  background:rgba(255,255,255,.9);
+  border:1px solid #dfe8f4;
+  border-radius:26px;
+  box-shadow:0 14px 36px rgba(16,32,51,.08);
+}
+.rin-material-head{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:1.25rem;
+  align-items:center;
+  margin-bottom:1rem;
+  padding:1.5rem;
+}
+.rin-material-head h1{
+  color:#0c2548;
+  font-size:clamp(2rem,4vw,3.4rem);
+  line-height:1.08;
+  margin:.2rem 0 .8rem;
+}
+.rin-material-logos{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:.75rem;
+}
+.rin-material-logos img{
+  width:min(150px,18vw);
+  max-height:82px;
+  object-fit:contain;
+}
+.rin-material-card{
+  margin-top:1rem;
+  padding:1.5rem;
+}
+.rin-material-card h2{
+  color:#0c2548;
+  margin:.1rem 0 .8rem;
+}
+.rin-collapse-card summary{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  cursor:pointer;
+  list-style:none;
+}
+.rin-collapse-card summary::-webkit-details-marker{
+  display:none;
+}
+.rin-collapse-card summary h2{
+  margin:0;
+}
+.rin-collapse-card summary::after{
+  content:"+";
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 34px;
+  width:34px;
+  height:34px;
+  background:#173d7a;
+  border-radius:50%;
+  color:#fff;
+  font-size:1.35rem;
+  font-weight:800;
+  line-height:1;
+}
+.rin-collapse-card[open] summary{
+  margin-bottom:1rem;
+}
+.rin-collapse-card[open] summary::after{
+  content:"−";
+}
+.rin-material-card p{
+  color:#40556d;
+  margin:0 0 1rem;
+}
+.rin-material-card p:last-child{
+  margin-bottom:0;
+}
+.scenario-structure-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:.8rem;
+  margin-top:1rem;
+}
+.scenario-structure-grid article{
+  background:#f7fafe;
+  border:1px solid #dfe8f4;
+  border-radius:18px;
+  padding:1rem;
+}
+.scenario-structure-grid span{
+  display:inline-flex;
+  color:#0b63b6;
+  font-weight:900;
+  letter-spacing:.08em;
+  margin-bottom:.5rem;
+}
+.scenario-structure-grid h3{
+  color:#173d7a;
+  font-size:1rem;
+  line-height:1.25;
+  margin:0;
+  text-transform:uppercase;
+}
+.rin-material-note{
+  border-left:5px solid #173d7a;
+}
+.rin-scenarios-list{
+  margin-top:1.2rem;
+}
+.rin-scenario-filter{
+  background:rgba(255,255,255,.9);
+  border:1px solid #dfe8f4;
+  border-radius:22px;
+  box-shadow:0 10px 24px rgba(16,32,51,.06);
+  margin-top:1rem;
+  padding:1rem;
+}
+.rin-scenario-filter .eyebrow{
+  margin:0 0 .55rem;
+}
+.rin-scenario-filter-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.55rem;
+}
+.rin-scenario-count{
+  justify-content:flex-start;
+  margin:1rem 0 0;
+}
+.rin-scenario-count p{
+  border-color:#aebfe9;
+  color:#2f6fdd;
+}
+.rin-scenario-grid{
+  margin-top:1rem;
+}
+.rin-scenario-grid .scenario-card{
+  border-color:#dfe8f4;
+  box-shadow:0 12px 28px rgba(16,32,51,.07);
+}
+.rin-scenario-grid .scenario-card-top{
+  border-bottom-color:#e7eef8;
+}
+.rin-scenario-grid .scenario-viz{
+  color:#0b63b6;
+}
+.rin-scenario-grid .rin-grade-badge{
+  display:inline-flex;
+  align-items:center;
+  width:max-content;
+  max-width:100%;
+  background:#eef4ff;
+  border:1px solid #c5d8ff;
+  border-radius:999px;
+  color:#2f6fdd;
+  font-size:.82rem;
+  font-weight:900;
+  margin:.7rem 0 0;
+  padding:.35rem .65rem;
+}
+.rin-scenario-grid .scenario-meta div{
+  background:#f7fafe;
+  border-color:#dfe8f4;
+}
+.rin-scenario-grid .scenario-meta dt{
+  color:#173d7a;
+}
+.rin-scenario-grid .scenario-download{
+  background:#173d7a;
+  border-color:#173d7a;
+  color:#fff;
+}
+.rin-scenario-grid .scenario-download:hover{
+  box-shadow:0 12px 28px rgba(23,61,122,.18);
+}
+.rin-scenario-actions{
+  display:grid;
+  gap:.55rem;
+  margin-top:auto;
+}
+.rin-video-link{
+  width:100%;
+}
 @media (max-width: 980px){
   .catalog-layout{
     grid-template-columns:1fr;
@@ -1460,6 +1654,18 @@ img{max-width:100%;display:block}
   .guidelines-sklop-list{
     grid-template-columns:repeat(2, minmax(0, 1fr));
   }
+  .scenario-structure-grid{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+  }
+  .rin-material-head{
+    grid-template-columns:1fr;
+  }
+  .rin-material-logos{
+    justify-content:flex-start;
+  }
+  .rin-material-logos img{
+    width:140px;
+  }
 }
 @media (max-width: 720px){
   .catalog-title-row{
@@ -1473,6 +1679,9 @@ img{max-width:100%;display:block}
     border-radius:20px;
   }
   .guidelines-sklop-list{
+    grid-template-columns:1fr;
+  }
+  .scenario-structure-grid{
     grid-template-columns:1fr;
   }
   .goal-detail-grid{
