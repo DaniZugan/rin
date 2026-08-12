@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Izhodišča za spremljanje napredka učečih se – Računalništvo in informatika</title>
+  <meta name="description" content="Izhodišča za spremljanje napredka učečih se pri temeljnih vsebinah RIN po obdobjih in sklopih." />
+  <link rel="icon" type="image/png" href="assets/Slike/favicon.png" />
+  <link rel="stylesheet" href="style.css?v=20260812g" />
+</head>
+<body>
+<div id="site-header"></div>
+
+<main id="top">
+  <section class="recommendations-section guidelines-section" data-progress-page>
+    <div class="wrap">
+      <div class="recommendations-head">
+        <p class="eyebrow">KATALOG</p>
+        <h1>IZHODIŠČA ZA SPREMLJANJE NAPREDKA UČEČIH SE</h1>
+        <p class="lead">izberi obdobje in sklop, da se prikažejo izhodišča za oblikovanje kriterijev uspešnosti</p>
+      </div>
+
+      <div class="guidelines-shell">
+        <div class="guidelines-period-bar" aria-label="Izbira obdobja">
+          <p class="eyebrow">Obdobje</p>
+          <div class="guidelines-filter-row" role="tablist" aria-label="Izbira obdobja">
+            <button class="guideline-filter is-active" type="button" data-progress-period="OBDP" aria-pressed="true">PO</button>
+            <button class="guideline-filter" type="button" data-progress-period="OBD1" aria-pressed="false">1. VIO</button>
+            <button class="guideline-filter" type="button" data-progress-period="OBD2" aria-pressed="false">2. VIO</button>
+            <button class="guideline-filter" type="button" data-progress-period="OBD3" aria-pressed="false">3. VIO</button>
+          </div>
+        </div>
+
+        <div class="guidelines-layout">
+          <aside class="guidelines-sidebar" aria-label="Izbira sklopa">
+            <p class="eyebrow">Sklop</p>
+            <div class="guidelines-sklop-list">
+              <button class="guideline-filter is-active" type="button" data-progress-sklop="racunalniski-sistemi" aria-pressed="true">Računalniški sistemi</button>
+              <button class="guideline-filter" type="button" data-progress-sklop="podatki-in-analiza" aria-pressed="false">Podatki in analiza</button>
+              <button class="guideline-filter" type="button" data-progress-sklop="algoritmi-in-programiranje" aria-pressed="false">Algoritmi in programiranje</button>
+              <button class="guideline-filter" type="button" data-progress-sklop="omrezja-in-internet" aria-pressed="false">Omrežja in internet</button>
+              <button class="guideline-filter" type="button" data-progress-sklop="ucinki-racunalnistva-in-informatike" aria-pressed="false">Učinki računalništva in informatike</button>
+            </div>
+          </aside>
+
+          <article class="guideline-result" aria-live="polite">
+            <p class="eyebrow" id="progressPeriodLabel">PO</p>
+            <h2 id="progressTitle">Računalniški sistemi</h2>
+            <div class="guideline-body progress-body" id="progressBody"></div>
+          </article>
+        </div>
+      </div>
+
+      <div class="content-action-row">
+        <a class="btn primary" id="progressGoalsLink" href="katalog-znanja.html?obd=OBDP">Preglej učne cilje</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="includes.js?v=20260610k"></script>
+<script src="assets/Gradiva/izhodisca-spremljanje.js?v=20260812a"></script>
+<script src="script.js?v=20260812d"></script>
+</body>
+</html>

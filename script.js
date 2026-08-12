@@ -43,18 +43,15 @@ if (counters.length) {
       if (!entry.isIntersecting) return;
       const el = entry.target;
       const target = Number(el.dataset.count);
-      let current = 0;
-      const step = Math.max(1, Math.ceil(target / 24));
-      const tick = () => {
-        current += step;
-        if (current >= target) {
-          el.textContent = target;
-        } else {
-          el.textContent = current;
-          requestAnimationFrame(tick);
-        }
+      const duration = 2200;
+      const start = performance.now();
+      const tick = (now) => {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(target * eased);
+        if (progress < 1) requestAnimationFrame(tick);
       };
-      tick();
+      requestAnimationFrame(tick);
       io.unobserve(el);
     });
   }, { threshold: 0.45 });
@@ -65,6 +62,186 @@ document.addEventListener('click', () => {
     document.querySelectorAll('.main-nav .dropdown').forEach((dd) => dd.classList.remove('open'));
   }
 });
+
+const recommendationsTabs = document.querySelector('[data-recommendations-tabs]');
+if (recommendationsTabs) {
+  const tabs = recommendationsTabs.querySelectorAll('[data-recommendation-tab]');
+  const panels = recommendationsTabs.querySelectorAll('.recommendation-content');
+  const guidelinesLink = recommendationsTabs.querySelector('#recommendationsGuidelinesLink');
+  const goalsLink = recommendationsTabs.querySelector('#recommendationsGoalsLink');
+  const tabPeriodMap = {
+    po: 'OBDP',
+    vio1: 'OBD1',
+    vio23: 'OBD2',
+  };
+
+  const updateRecommendationLinks = (targetId) => {
+    const period = tabPeriodMap[targetId] || 'OBDP';
+    if (guidelinesLink) {
+      guidelinesLink.href = `smernice-ucnih-aktivnosti.html?obd=${encodeURIComponent(period)}`;
+    }
+    if (goalsLink) {
+      goalsLink.href = `katalog-znanja.html?obd=${encodeURIComponent(period)}`;
+    }
+  };
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const targetId = tab.dataset.recommendationTab;
+
+      tabs.forEach((item) => {
+        const isActive = item === tab;
+        item.classList.toggle('is-active', isActive);
+        item.setAttribute('aria-selected', String(isActive));
+      });
+
+      panels.forEach((panel) => {
+        panel.hidden = panel.id !== targetId;
+      });
+
+      updateRecommendationLinks(targetId);
+    });
+  });
+
+  const activeTab = recommendationsTabs.querySelector('[data-recommendation-tab].is-active');
+  updateRecommendationLinks(activeTab?.dataset.recommendationTab || 'po');
+}
+
+const guidelinesRoot = document.querySelector('[data-guidelines-page]');
+if (guidelinesRoot && window.SMER_NACRTOVANJA_RIN) {
+  const data = window.SMER_NACRTOVANJA_RIN;
+  const periodButtons = guidelinesRoot.querySelectorAll('[data-guidelines-period]');
+  const sklopButtons = guidelinesRoot.querySelectorAll('[data-guidelines-sklop]');
+  const periodLabel = guidelinesRoot.querySelector('#guidelinePeriodLabel');
+  const title = guidelinesRoot.querySelector('#guidelineTitle');
+  const body = guidelinesRoot.querySelector('#guidelineBody');
+  const goalsLink = guidelinesRoot.querySelector('#guidelineGoalsLink');
+  const periodIds = new Set(data.periods.map((period) => period.id));
+  const getPeriodFromUrl = () => {
+    const period = new URLSearchParams(window.location.search).get('obd');
+    return periodIds.has(period) ? period : 'OBDP';
+  };
+  let activePeriod = getPeriodFromUrl();
+  let activeSklop = 'racunalniski-sistemi';
+
+  const escapeHtml = (value) => String(value || '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+
+  const findById = (items, id) => items.find((item) => item.id === id);
+
+  const renderGuideline = () => {
+    const period = findById(data.periods, activePeriod);
+    const sklop = findById(data.sklopi, activeSklop);
+    const text = data.guidelines?.[activePeriod]?.[activeSklop] || '';
+    periodLabel.textContent = `${period?.label || ''} / ${period?.title || ''}`;
+    title.textContent = sklop?.label || '';
+    body.innerHTML = text
+      ? text.split(/\n{2,}/).map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('')
+      : '<p>Smernica za izbrano kombinacijo še ni dodana.</p>';
+    if (goalsLink) {
+      goalsLink.href = `katalog-znanja.html?obd=${encodeURIComponent(activePeriod)}`;
+    }
+  };
+
+  const setActiveButton = (buttons, attr, value) => {
+    buttons.forEach((button) => {
+      const isActive = button.dataset[attr] === value;
+      button.classList.toggle('is-active', isActive);
+      button.setAttribute('aria-pressed', String(isActive));
+    });
+  };
+
+  periodButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      activePeriod = button.dataset.guidelinesPeriod;
+      setActiveButton(periodButtons, 'guidelinesPeriod', activePeriod);
+      window.history.replaceState({}, '', `smernice-ucnih-aktivnosti.html?obd=${encodeURIComponent(activePeriod)}`);
+      renderGuideline();
+    });
+  });
+
+  sklopButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      activeSklop = button.dataset.guidelinesSklop;
+      setActiveButton(sklopButtons, 'guidelinesSklop', activeSklop);
+      renderGuideline();
+    });
+  });
+
+  setActiveButton(periodButtons, 'guidelinesPeriod', activePeriod);
+  renderGuideline();
+}
+
+const progressRoot = document.querySelector('[data-progress-page]');
+if (progressRoot && window.IZHODISCA_SPREMLJANJA_RIN) {
+  const data = window.IZHODISCA_SPREMLJANJA_RIN;
+  const periodButtons = progressRoot.querySelectorAll('[data-progress-period]');
+  const sklopButtons = progressRoot.querySelectorAll('[data-progress-sklop]');
+  const periodLabel = progressRoot.querySelector('#progressPeriodLabel');
+  const title = progressRoot.querySelector('#progressTitle');
+  const body = progressRoot.querySelector('#progressBody');
+  const goalsLink = progressRoot.querySelector('#progressGoalsLink');
+  let activePeriod = 'OBDP';
+  let activeSklop = 'racunalniski-sistemi';
+
+  const escapeHtml = (value) => String(value || '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+
+  const findById = (items, id) => items.find((item) => item.id === id);
+
+  const renderProgress = () => {
+    const period = findById(data.periods, activePeriod);
+    const sklop = findById(data.sklopi, activeSklop);
+    const entry = data.entries?.[activePeriod]?.[activeSklop] || {};
+    const paragraphs = entry.paragraphs || [];
+    const points = entry.points || [];
+    const paragraphHtml = paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('');
+    const pointsHtml = points.length
+      ? `<h3>Izhodiščne postavke za oblikovanje kriterijev uspešnosti</h3><ul>${points.map((point) => `<li>${escapeHtml(point)}</li>`).join('')}</ul>`
+      : '';
+
+    periodLabel.textContent = `${period?.label || ''} / ${period?.title || ''}`;
+    title.textContent = sklop?.label || '';
+    body.innerHTML = (paragraphHtml || pointsHtml)
+      ? `${paragraphHtml}${pointsHtml}`
+      : '<p>Izhodišča za izbrano kombinacijo še niso dodana.</p>';
+    goalsLink.href = `katalog-znanja.html?obd=${encodeURIComponent(activePeriod)}`;
+  };
+
+  const setActiveButton = (buttons, attr, value) => {
+    buttons.forEach((button) => {
+      const isActive = button.dataset[attr] === value;
+      button.classList.toggle('is-active', isActive);
+      button.setAttribute('aria-pressed', String(isActive));
+    });
+  };
+
+  periodButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      activePeriod = button.dataset.progressPeriod;
+      setActiveButton(periodButtons, 'progressPeriod', activePeriod);
+      renderProgress();
+    });
+  });
+
+  sklopButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      activeSklop = button.dataset.progressSklop;
+      setActiveButton(sklopButtons, 'progressSklop', activeSklop);
+      renderProgress();
+    });
+  });
+
+  renderProgress();
+}
 
 const catalogRoot = document.querySelector('[data-knowledge-catalog]');
 if (catalogRoot && window.KATALOG_ZNANJA) {

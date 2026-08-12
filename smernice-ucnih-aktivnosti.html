@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smernice za načrtovanje učnih aktivnosti – Računalništvo in informatika</title>
+  <meta name="description" content="Smernice za načrtovanje učnih aktivnosti temeljnih vsebin RIN po obdobjih in sklopih." />
+  <link rel="icon" type="image/png" href="assets/Slike/favicon.png" />
+  <link rel="stylesheet" href="style.css?v=20260812h" />
+</head>
+<body>
+<div id="site-header"></div>
+
+<main id="top">
+  <section class="recommendations-section guidelines-section" data-guidelines-page>
+    <div class="wrap">
+      <div class="recommendations-head">
+        <p class="eyebrow">KATALOG</p>
+        <h1>SMERNICE ZA NAČRTOVANJE UČNIH AKTIVNOSTI</h1>
+        <p class="lead">izberi obdobje in sklop, da se prikaže izbrana smernica</p>
+      </div>
+
+      <div class="guidelines-shell">
+        <div class="guidelines-period-bar" aria-label="Izbira obdobja">
+          <p class="eyebrow">Obdobje</p>
+          <div class="guidelines-filter-row" role="tablist" aria-label="Izbira obdobja">
+            <button class="guideline-filter is-active" type="button" data-guidelines-period="OBDP" aria-pressed="true">PO</button>
+            <button class="guideline-filter" type="button" data-guidelines-period="OBD1" aria-pressed="false">1. VIO</button>
+            <button class="guideline-filter" type="button" data-guidelines-period="OBD2" aria-pressed="false">2. VIO</button>
+            <button class="guideline-filter" type="button" data-guidelines-period="OBD3" aria-pressed="false">3. VIO</button>
+          </div>
+        </div>
+
+        <div class="guidelines-layout">
+          <aside class="guidelines-sidebar" aria-label="Izbira sklopa">
+            <p class="eyebrow">Sklop</p>
+            <div class="guidelines-sklop-list">
+              <button class="guideline-filter is-active" type="button" data-guidelines-sklop="racunalniski-sistemi" aria-pressed="true">Računalniški sistemi</button>
+              <button class="guideline-filter" type="button" data-guidelines-sklop="podatki-in-analiza" aria-pressed="false">Podatki in analiza</button>
+              <button class="guideline-filter" type="button" data-guidelines-sklop="algoritmi-in-programiranje" aria-pressed="false">Algoritmi in programiranje</button>
+              <button class="guideline-filter" type="button" data-guidelines-sklop="omrezja-in-internet" aria-pressed="false">Omrežja in internet</button>
+              <button class="guideline-filter" type="button" data-guidelines-sklop="ucinki-racunalnistva-in-informatike" aria-pressed="false">Učinki računalništva in informatike</button>
+            </div>
+          </aside>
+
+          <article class="guideline-result" aria-live="polite">
+            <p class="eyebrow" id="guidelinePeriodLabel">PO</p>
+            <h2 id="guidelineTitle">Računalniški sistemi</h2>
+            <div class="guideline-body" id="guidelineBody"></div>
+          </article>
+        </div>
+      </div>
+
+      <div class="content-action-row">
+        <a class="btn primary" id="guidelineGoalsLink" href="katalog-znanja.html?obd=OBDP">Preglej učne cilje</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="includes.js?v=20260610k"></script>
+<script src="assets/Gradiva/smernice.js?v=20260812a"></script>
+<script src="script.js?v=20260812f"></script>
+</body>
+</html>
