@@ -175,8 +175,6 @@ if (progressRoot && window.IZHODISCA_SPREMLJANJA_RIN) {
   const data = window.IZHODISCA_SPREMLJANJA_RIN;
   const periodButtons = progressRoot.querySelectorAll('[data-progress-period]');
   const sklopButtons = progressRoot.querySelectorAll('[data-progress-sklop]');
-  const periodLabel = progressRoot.querySelector('#progressPeriodLabel');
-  const title = progressRoot.querySelector('#progressTitle');
   const body = progressRoot.querySelector('#progressBody');
   const goalsLink = progressRoot.querySelector('#progressGoalsLink');
   let activePeriod = 'OBDP';
@@ -192,8 +190,6 @@ if (progressRoot && window.IZHODISCA_SPREMLJANJA_RIN) {
   const findById = (items, id) => items.find((item) => item.id === id);
 
   const renderProgress = () => {
-    const period = findById(data.periods, activePeriod);
-    const sklop = findById(data.sklopi, activeSklop);
     const entry = data.entries?.[activePeriod]?.[activeSklop] || {};
     const paragraphs = entry.paragraphs || [];
     const points = entry.points || [];
@@ -202,8 +198,6 @@ if (progressRoot && window.IZHODISCA_SPREMLJANJA_RIN) {
       ? `<h3>Izhodiščne postavke za oblikovanje kriterijev uspešnosti</h3><ul>${points.map((point) => `<li>${escapeHtml(point)}</li>`).join('')}</ul>`
       : '';
 
-    periodLabel.textContent = `${period?.label || ''} / ${period?.title || ''}`;
-    title.textContent = sklop?.label || '';
     body.innerHTML = (paragraphHtml || pointsHtml)
       ? `${paragraphHtml}${pointsHtml}`
       : '<p>Izhodišča za izbrano kombinacijo še niso dodana.</p>';
