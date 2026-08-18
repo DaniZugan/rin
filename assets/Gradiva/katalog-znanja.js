@@ -1844,5 +1844,628 @@ window.KATALOG_ZNANJA = {
         }
       ]
     }
+  ],
+  "SS": [
+    {
+      "id": "ss-podatki-in-analiza",
+      "title": "Podatki in analiza",
+      "podsklopi": [
+        {
+          "id": "ss-podatki-in-analiza-sklepanje-in-modeliranje",
+          "title": "Sklepanje in modeliranje",
+          "skupine": [
+            {
+              "vsebina": "Z računalniškimi modeli lahko simuliramo dogodke, preverjamo teorije in sklepe ali izdelujemo napovedi na podlagi manjše ali večje količine podatkov. Računalniški modeli so abstrakcije, izdelane na podlagi podatkov z namenom, da izpostavijo ključne značilnosti in povezave v sistemu. Novi podatki omogočajo postopno izboljševanje modelov.",
+              "cilji": [
+                {
+                  "cilj": "Dijak formalizira problem, ki ga namerava raziskovati in določi ter zbere potrebne podatke.",
+                  "razlaga": "Z računalniškimi modeli lahko simuliramo dogodke, preverjamo teorije in sklepe ali izdelujemo napovedi na podlagi manjše ali večje količine podatkov. Računalniški modeli so abstrakcije, izdelane na podlagi podatkov z namenom, da izpostavijo ključne značilnosti in povezave v sistemu. Novi podatki omogočajo postopno izboljševanje modelov.",
+                  "primer": "",
+                  "raven": "osnoven"
+                },
+                {
+                  "cilj": "Dijak oblikuje model podatkov, s pomočjo katerega išče odgovore na svoja vprašanja.",
+                  "razlaga": "Z računalniškimi modeli lahko simuliramo dogodke, preverjamo teorije in sklepe ali izdelujemo napovedi na podlagi manjše ali večje količine podatkov. Računalniški modeli so abstrakcije, izdelane na podlagi podatkov z namenom, da izpostavijo ključne značilnosti in povezave v sistemu. Novi podatki omogočajo postopno izboljševanje modelov.",
+                  "primer": "",
+                  "raven": "osnoven"
+                }
+              ]
+            },
+            {
+              "vsebina": "Točnost napovedi je odvisna od omejitev uporabljenih modelov in podatkov, iz katerih so ti modeli zgrajeni. Količina, kakovost in raznolikost podatkov ter izbrane spremenljivke lahko vplivajo na kakovost modelov in razumevanje sistema. Sisteme testiramo na neodvisnih množicah podatkov.",
+              "cilji": [
+                {
+                  "cilj": "Dijak na osnovi podatkov gradi modele za izdelovanje napovedi in prepoznavanje vzorcev v podatkih.",
+                  "razlaga": "Točnost napovedi je odvisna od omejitev uporabljenih modelov in podatkov, iz katerih so ti modeli zgrajeni. Količina, kakovost in raznolikost podatkov ter izbrane spremenljivke lahko vplivajo na kakovost modelov in razumevanje sistema. Sisteme testiramo na neodvisnih množicah podatkov.",
+                  "primer": "",
+                  "raven": "osnoven"
+                },
+                {
+                  "cilj": "Dijak vrednoti uporabnost modela, ga razloži in izboljšuje.",
+                  "razlaga": "Točnost napovedi je odvisna od omejitev uporabljenih modelov in podatkov, iz katerih so ti modeli zgrajeni. Količina, kakovost in raznolikost podatkov ter izbrane spremenljivke lahko vplivajo na kakovost modelov in razumevanje sistema. Sisteme testiramo na neodvisnih množicah podatkov.",
+                  "primer": "",
+                  "raven": "osnoven"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ss-podatki-in-analiza-shranjevanje",
+          "title": "Shranjevanje",
+          "skupine": [
+            {
+              "vsebina": "Podatki lahko vsebujejo več medsebojno povezanih spremenljivk. Podatki o prebivalstvu lahko na primer vsebujejo podatke o starosti, spolu in višini. Izbor in načini shranjevanja le-teh vplivajo na stroške, hitrost, zanesljivost, dostopnost, varovanje zasebnosti in celovitost podatkov.",
+              "cilji": [
+                {
+                  "cilj": "Dijak interpretira vlogo datoteke in pomen njenih metapodatkov.",
+                  "razlaga": "Podatki lahko vsebujejo več medsebojno povezanih spremenljivk. Podatki o prebivalstvu lahko na primer vsebujejo podatke o starosti, spolu in višini. Izbor in načini shranjevanja le-teh vplivajo na stroške, hitrost, zanesljivost, dostopnost, varovanje zasebnosti in celovitost podatkov.",
+                  "primer": "",
+                  "raven": "osnoven"
+                },
+                {
+                  "cilj": "Dijak opisuje in vrednoti načine zagotavljanja celovitosti in smiselnosti shranjevanih podatkov.",
+                  "razlaga": "Podatki lahko vsebujejo več medsebojno povezanih spremenljivk. Podatki o prebivalstvu lahko na primer vsebujejo podatke o starosti, spolu in višini. Izbor in načini shranjevanja le-teh vplivajo na stroške, hitrost, zanesljivost, dostopnost, varovanje zasebnosti in celovitost podatkov.",
+                  "primer": "",
+                  "raven": "osnoven"
+                }
+              ]
+            },
+            {
+              "vsebina": "Podatki so lahko shranjeni na različne načine, poleg tega pa lahko nanje gledamo na različnih nivojih, od višjih, kot so tabele, ki jih prikazujejo programi, do nižjih, kot je fizično shranjevanje bitov. Programska okolja spreminjajo nižjenivojske predstavitve v oblike, ki jih lahko razumemo ljudje.",
+              "cilji": [
+                {
+                  "cilj": "Dijak shranjuje podatke v datoteke ustreznega formata na primerno in hierarhično ter logično smiselno lokacijo.",
+                  "razlaga": "Podatki so lahko shranjeni na različne načine, poleg tega pa lahko nanje gledamo na različnih nivojih, od višjih, kot so tabele, ki jih prikazujejo programi, do nižjih, kot je fizično shranjevanje bitov. Programska okolja spreminjajo nižjenivojske predstavitve v oblike, ki jih lahko razumemo ljudje.",
+                  "primer": "",
+                  "raven": "osnoven"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ss-podatki-in-analiza-prikazovanje-in-preoblikovanje",
+          "title": "Prikazovanje in preoblikovanje",
+          "skupine": [
+            {
+              "vsebina": "Podatke lahko transformiramo: preoblikujemo, posplošujemo in poenostavljamo. Te spremembe vplivajo na njihovo interpretacijo. Primeri transformacij vključujejo vizualizacijo, agregiranje, preoblikovanje in matematične operacije.",
+              "cilji": [
+                {
+                  "cilj": "Dijak obdeluje podatke in jih prikazuje na različne načine.",
+                  "razlaga": "Podatke lahko transformiramo: preoblikujemo, posplošujemo in poenostavljamo. Te spremembe vplivajo na njihovo interpretacijo. Primeri transformacij vključujejo vizualizacijo, agregiranje, preoblikovanje in matematične operacije.",
+                  "primer": "",
+                  "raven": "osnoven"
+                },
+                {
+                  "cilj": "Dijak prikazuje, transformira in interpretira podatke.",
+                  "razlaga": "Podatke lahko transformiramo: preoblikujemo, posplošujemo in poenostavljamo. Te spremembe vplivajo na njihovo interpretacijo. Primeri transformacij vključujejo vizualizacijo, agregiranje, preoblikovanje in matematične operacije.",
+                  "primer": "",
+                  "raven": "osnoven"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ss-podatki-in-analiza-zbiranje",
+          "title": "Zbiranje",
+          "skupine": [
+            {
+              "vsebina": "Stalno zbiranje podatkov poraja pomisleke glede poseganja v zasebnost. Različne metode zbiranja vplivajo na količino in kakovost zbranih podatkov.",
+              "cilji": [
+                {
+                  "cilj": "Dijak opisuje vpliv pridobivanja in shranjevanja podatkov na stroške, hitrost, zanesljivost, dostopnost, varovanje zasebnosti in njihovo celovitost.",
+                  "razlaga": "Stalno zbiranje podatkov poraja pomisleke glede poseganja v zasebnost. Različne metode zbiranja vplivajo na količino in kakovost zbranih podatkov.",
+                  "primer": "",
+                  "raven": "osnoven"
+                }
+              ]
+            },
+            {
+              "vsebina": "Za zbiranje podatkov načrtujemo različne algoritme in orodja. Pri avtomatiziranem zbiranju podatkov se le-ti pretvarjajo v oblike, ki jih računalnik lahko obdeluje. Tako je potrebno, na primer, podatke iz analognega senzorja pretvoriti v digitalno obliko. Na metodo, ki se uporablja za avtomatizacijo zbiranja podatkov, vplivata razpoložljivost orodij in namen uporabe podatkov.",
+              "cilji": [
+                {
+                  "cilj": "Dijak podatke pridobiva na različne načine in pri tem uporablja ustrezna orodja ter algoritme oz. postopke.",
+                  "razlaga": "Za zbiranje podatkov načrtujemo različne algoritme in orodja. Pri avtomatiziranem zbiranju podatkov se le-ti pretvarjajo v oblike, ki jih računalnik lahko obdeluje. Tako je potrebno, na primer, podatke iz analognega senzorja pretvoriti v digitalno obliko. Na metodo, ki se uporablja za avtomatizacijo zbiranja podatkov, vplivata razpoložljivost orodij in namen uporabe podatkov.",
+                  "primer": "",
+                  "raven": "osnoven"
+                }
+              ]
+            },
+            {
+              "vsebina": "Za zbiranje podatkov načrtujemo različne algoritme in orodja. Pri avtomatiziranem zbiranju podatkov se le-ti pretvarjajo v oblike, ki jih računalnik lahko obdeluje. Tako je potrebno, na primer, podatke iz analognega senzorja pretvoriti v digitalno obliko. Na metodo, ki se uporablja za avtomatizacijo zbiranja podatkov, vplivata razpoložljivost orodij in namena podatkov.",
+              "cilji": [
+                {
+                  "cilj": "Dijak pridobiva podatke na različne načine.",
+                  "razlaga": "Za zbiranje podatkov načrtujemo različne algoritme in orodja. Pri avtomatiziranem zbiranju podatkov se le-ti pretvarjajo v oblike, ki jih računalnik lahko obdeluje. Tako je potrebno, na primer, podatke iz analognega senzorja pretvoriti v digitalno obliko. Na metodo, ki se uporablja za avtomatizacijo zbiranja podatkov, vplivata razpoložljivost orodij in namena podatkov.",
+                  "primer": "",
+                  "raven": "osnoven"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ss-algoritmi-in-programiranje",
+      "title": "Algoritmi in programiranje",
+      "podsklopi": [
+        {
+          "id": "ss-algoritmi-in-programiranje-razvoj-programov",
+          "title": "Razvoj programov",
+          "skupine": [
+            {
+              "vsebina": "Razvoj kompleksnih programov, knjižnice ter orodja za urejanje in obvladovanje sestavnih delov",
+              "cilji": [
+                {
+                  "cilj": "Demonstrira uporabo orodij za razvoj programov.",
+                  "razlaga": "Razvoj kompleksnih programov, knjižnice ter orodja za urejanje in obvladovanje sestavnih delov",
+                  "primer": "",
+                  "raven": "dodaten"
+                },
+                {
+                  "cilj": "Dijak pokaže, da zna poiskati in uporabiti ustrezno knjižnico, ki reši kak del problema.",
+                  "razlaga": "Razvoj kompleksnih programov, knjižnice ter orodja za urejanje in obvladovanje sestavnih delov",
+                  "primer": "",
+                  "raven": "dodaten"
+                }
+              ]
+            },
+            {
+              "vsebina": "Načrtovanje zahtevnega programa – od problema v stvarnem svetu, preko modela, algoritma do kode.",
+              "cilji": [
+                {
+                  "cilj": "Dijak pri načrtovanju definira problemske kriterije in omejitve ter funkcionalne specifikacije rešitve.",
+                  "razlaga": "Načrtovanje zahtevnega programa – od problema v stvarnem svetu, preko modela, algoritma do kode.",
+                  "primer": "",
+                  "raven": "osnoven"
+                },
+                {
+                  "cilj": "Dijak program zapiše v skladu z načrtovanimi zahtevami.",
+                  "razlaga": "Načrtovanje zahtevnega programa – od problema v stvarnem svetu, preko modela, algoritma do kode.",
+                  "primer": "",
+                  "raven": "osnoven"
+                },
+                {
+                  "cilj": "Dijak razvije programe s postopkom, ki vključuje načrtovanje, zapisovanje programa, izvajanje, preizkušanje in odpravljanje neskladnosti z načrtom.",
+                  "razlaga": "Načrtovanje zahtevnega programa – od problema v stvarnem svetu, preko modela, algoritma do kode.",
+                  "primer": "",
+                  "raven": "osnoven"
+                }
+              ]
+            },
+            {
+              "vsebina": "Testiranje, dokumentiranje, primerjanje algoritmov (čas izvajanja).",
+              "cilji": [
+                {
+                  "cilj": "Dijak program preizkuša in odpravi vsa neskladja z načrtom.",
+                  "razlaga": "Testiranje, dokumentiranje, primerjanje algoritmov (čas izvajanja).",
+                  "primer": "",
+                  "raven": "priporočen"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ss-algoritmi-in-programiranje-algoritmi",
+          "title": "Algoritmi",
+          "skupine": [
+            {
+              "vsebina": "Testiranje, dokumentiranje, primerjanje algoritmov (čas izvajanja).",
+              "cilji": [
+                {
+                  "cilj": "Dijak demonstrira primer dveh (ali več) algoritmov za isti problem, ki nad istimi podatki zahtevata(jo) različne čase izvajanja in zna to razložiti.",
+                  "razlaga": "Testiranje, dokumentiranje, primerjanje algoritmov (čas izvajanja).",
+                  "primer": "",
+                  "raven": "priporočen"
+                }
+              ]
+            },
+            {
+              "vsebina": "Pojem algoritma, več algoritmov za isti problem, različni načini zapisa algoritma.",
+              "cilji": [
+                {
+                  "cilj": "Dijak pokaže primer problema, kjer obstaja več algoritmov za reševanje.",
+                  "razlaga": "Pojem algoritma, več algoritmov za isti problem, različni načini zapisa algoritma.",
+                  "primer": "",
+                  "raven": "osnoven"
+                },
+                {
+                  "cilj": "Dijak prikaže različne oblike zapisov algoritma.",
+                  "razlaga": "Pojem algoritma, več algoritmov za isti problem, različni načini zapisa algoritma.",
+                  "primer": "",
+                  "raven": "osnoven"
+                },
+                {
+                  "cilj": "Dijak razloži pojem algoritma.",
+                  "razlaga": "Pojem algoritma, več algoritmov za isti problem, različni načini zapisa algoritma.",
+                  "primer": "",
+                  "raven": "osnoven"
+                }
+              ]
+            },
+            {
+              "vsebina": "Zaporedje ukazov, spremenljivke, branje/izpisovanje podatkovni tip, pretvarjanje med tipi, nizi (ne kot sest. PS).",
+              "cilji": [
+                {
+                  "cilj": "Dijak s primerom pokaže pomembnost vrstnega reda ukazov.",
+                  "razlaga": "Zaporedje ukazov, spremenljivke, branje/izpisovanje podatkovni tip, pretvarjanje med tipi, nizi (ne kot sest. PS).",
+                  "primer": "",
+                  "raven": "osnoven"
+                },
+                {
+                  "cilj": "Dijak sledi izvajanju algoritma in napove njegov izid.",
+                  "razlaga": "Zaporedje ukazov, spremenljivke, branje/izpisovanje podatkovni tip, pretvarjanje med tipi, nizi (ne kot sest. PS).",
+                  "primer": "",
+                  "raven": "osnoven"
+                }
+              ]
+            },
+            {
+              "vsebina": "Poznavanje pogostih algoritmov, poznavanje strategij razvoja algoritmov",
+              "cilji": [
+                {
+                  "cilj": "Dijak uporablja in razloži nekaj tipičnih pristopov pri razvoju algoritmov - pregledovanje, deli in vladaj, požrešna metoda, rekurzija, sestopanje, …",
+                  "razlaga": "Poznavanje pogostih algoritmov, poznavanje strategij razvoja algoritmov",
+                  "primer": "",
+                  "raven": "dodaten"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ss-algoritmi-in-programiranje-spremenljivke",
+          "title": "Spremenljivke",
+          "skupine": [
+            {
+              "vsebina": "Tabela kot indeksirano zaporedje spremenljivk istega tipa.",
+              "cilji": [
+                {
+                  "cilj": "Dijak pokaže in razloži nekaj primerov, kjer je smiselna organizacija podatkov v tabeli",
+                  "razlaga": "Tabela kot indeksirano zaporedje spremenljivk istega tipa.",
+                  "primer": "",
+                  "raven": "priporočen"
+                },
+                {
+                  "cilj": "Dijak reši problem, ki zahteva, da obdelamo vse podatke v tabeli in to razloži.",
+                  "razlaga": "Tabela kot indeksirano zaporedje spremenljivk istega tipa.",
+                  "primer": "",
+                  "raven": "priporočen"
+                }
+              ]
+            },
+            {
+              "vsebina": "Vhod kot zaporedje podatkov, ki jih program pridobi iz okolja. Izhod kot zaporedje podatkov, ki jih program posreduje okolici. Programi, ki preberejo vhod, ga obdelajo in proizvedejo izhod.",
+              "cilji": [
+                {
+                  "cilj": "Dijak sestavlja preproste programe, s katerimi prebere podatke, jih uporabi za novo informacijo in informacijo izpiše.",
+                  "razlaga": "Vhod kot zaporedje podatkov, ki jih program pridobi iz okolja. Izhod kot zaporedje podatkov, ki jih program posreduje okolici. Programi, ki preberejo vhod, ga obdelajo in proizvedejo izhod.",
+                  "primer": "",
+                  "raven": "osnoven"
+                }
+              ]
+            },
+            {
+              "vsebina": "Zaporedje ukazov, spremenljivke, branje/izpisovanje podatkovni tip, pretvarjanje med tipi, nizi (ne kot sest. PS).",
+              "cilji": [
+                {
+                  "cilj": "Dijak uporabi spremenljivko za predstavitev spreminjajočega se podatka: - določi ustrezni tip spremenljivke oz. tip vsebine (na primer celo število, decimalno število, niz) - rokuje s spremenljivko (priredi in spremeni vrednost, prebere vrednost, uporabi jo v ustreznih operacijah",
+                  "razlaga": "Zaporedje ukazov, spremenljivke, branje/izpisovanje podatkovni tip, pretvarjanje med tipi, nizi (ne kot sest. PS).",
+                  "primer": "",
+                  "raven": "osnoven"
+                },
+                {
+                  "cilj": "Spreminja podatke enega tipa v drugega. (niz -> število, število -> niz, decimalno število -> celo število)",
+                  "razlaga": "Zaporedje ukazov, spremenljivke, branje/izpisovanje podatkovni tip, pretvarjanje med tipi, nizi (ne kot sest. PS).",
+                  "primer": "",
+                  "raven": "osnoven"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ss-algoritmi-in-programiranje-nadzor",
+          "title": "Nadzor",
+          "skupine": [
+            {
+              "vsebina": "Gnezdene zanke/vejitveni stavki",
+              "cilji": [
+                {
+                  "cilj": "Dijak prikaže primer problema, kjer je za rešitev problema potrebna zanka v zanki in gnezdeni vejitveni stavek.",
+                  "razlaga": "Gnezdene zanke/vejitveni stavki",
+                  "primer": "",
+                  "raven": "priporočen"
+                }
+              ]
+            },
+            {
+              "vsebina": "Zanke s pogojem.",
+              "cilji": [
+                {
+                  "cilj": "Dijak prikaže primer problema, kjer ne vemo vnaprej, koliko ponovitev skupka ukazov bo potrebnih.",
+                  "razlaga": "Zanke s pogojem.",
+                  "primer": "",
+                  "raven": "osnoven"
+                }
+              ]
+            },
+            {
+              "vsebina": "Naštevalne/števne zanke.",
+              "cilji": [
+                {
+                  "cilj": "Uporabi zanko, kjer vnaprej vemo število ponovitev ukazov.",
+                  "razlaga": "Naštevalne/števne zanke.",
+                  "primer": "",
+                  "raven": "osnoven"
+                }
+              ]
+            },
+            {
+              "vsebina": "Pogojni stavek, »knjižnice«.",
+              "cilji": [
+                {
+                  "cilj": "Ustvari program, ki se različno obnaša glede na vneseno vrednost podatka (npr. uporabi vejitev: če je podatek večji ali manjši od vrednosti 0, potem ...). Uporabi funkcije iz knjižnic.",
+                  "razlaga": "Pogojni stavek, »knjižnice«.",
+                  "primer": "",
+                  "raven": "osnoven"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ss-algoritmi-in-programiranje-modularnost",
+          "title": "Modularnost",
+          "skupine": [
+            {
+              "vsebina": "Funkcija (podprogram) kot poimenovan kos kode, posredovanje parametrov, vračanje vrednosti.",
+              "cilji": [
+                {
+                  "cilj": "Razloži razliko med izpisovanjem rezultata v funkciji/podprogramu in vračanjem rezultata.",
+                  "razlaga": "Funkcija (podprogram) kot poimenovan kos kode, posredovanje parametrov, vračanje vrednosti.",
+                  "primer": "",
+                  "raven": "osnoven"
+                },
+                {
+                  "cilj": "Sestavi program, kjer določen del kode izloči v podprogram/funkcijo in jo potem ustrezno kliče.",
+                  "razlaga": "Funkcija (podprogram) kot poimenovan kos kode, posredovanje parametrov, vračanje vrednosti.",
+                  "primer": "",
+                  "raven": "osnoven"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ss-komunikacije-in-internet",
+      "title": "Komunikacije in internet",
+      "podsklopi": [
+        {
+          "id": "ss-komunikacije-in-internet-omrezne-komunikacije-in-organizacija",
+          "title": "Omrežne komunikacije in organizacija",
+          "skupine": [
+            {
+              "vsebina": "Naslovi in naslavljanje, IPv4 in IPv6",
+              "cilji": [
+                {
+                  "cilj": "Dijak našteje in pojasni različne vrste in oblike (IPv4 in IPv6) naslavljanja in pošiljanja paketov: enemu naslovniku (unicast), vsem naslovnikom (broadcast), določeni množici naslovnikov (multicast).",
+                  "razlaga": "Naslovi in naslavljanje, IPv4 in IPv6",
+                  "primer": "",
+                  "raven": "osnoven"
+                },
+                {
+                  "cilj": "Dijak pojasni problem dodeljevanja naslova (DHCP) in ponarejanje naslova.",
+                  "razlaga": "Naslovi in naslavljanje, IPv4 in IPv6",
+                  "primer": "",
+                  "raven": "napreden"
+                }
+              ]
+            },
+            {
+              "vsebina": "Domače omrežje",
+              "cilji": [
+                {
+                  "cilj": "Dijak pojasni ustroj in delovanje domačega omrežja.",
+                  "razlaga": "Domače omrežje",
+                  "primer": "",
+                  "raven": "osnoven"
+                },
+                {
+                  "cilj": "Dijak pojasni, kaj je filtriranje vhodnega in izhodnega prometa s požarnimi pregradami.",
+                  "razlaga": "Domače omrežje",
+                  "primer": "",
+                  "raven": "napreden"
+                }
+              ]
+            },
+            {
+              "vsebina": "Struktura internetnega omrežja",
+              "cilji": [
+                {
+                  "cilj": "Dijak pozna osnovne pojme topologije računalniških omrežij.",
+                  "razlaga": "Struktura internetnega omrežja",
+                  "primer": "",
+                  "raven": "osnoven"
+                },
+                {
+                  "cilj": "Dijak pozna različne tehnologije za vzpostavljanje povezav.",
+                  "razlaga": "Struktura internetnega omrežja",
+                  "primer": "",
+                  "raven": "osnoven"
+                }
+              ]
+            },
+            {
+              "vsebina": "Arhitektura plasti",
+              "cilji": [
+                {
+                  "cilj": "Dijak prepozna koncept usmerjanja, kjer se paketi usmerjajo proti mreži prejemnika po najboljših močeh.",
+                  "razlaga": "Arhitektura plasti",
+                  "primer": "",
+                  "raven": "osnoven"
+                },
+                {
+                  "cilj": "Dijak razloži pojem paketa in se zaveda, da je v paketu informacija, ki jo prenaša in informacija kako naj prenaša to informacijo.",
+                  "razlaga": "Arhitektura plasti",
+                  "primer": "",
+                  "raven": "osnoven"
+                },
+                {
+                  "cilj": "Dijak ve, da informacija o načinu prenosa vsebuje naslov mreže in naslov prejemnika v mreži.",
+                  "razlaga": "Arhitektura plasti",
+                  "primer": "",
+                  "raven": "osnoven"
+                }
+              ]
+            },
+            {
+              "vsebina": "Nestandardne aplikacijske storitve - oblak in družabna omrežja, masovne online igre, poraba energije in trajnostni vidiki infrastrukture (elektrike, vode – ogljični odtis)",
+              "cilji": [
+                {
+                  "cilj": "Dijak prepozna, kako se združuje vire (strežnike) v zmogljivejše celote storitvene infrastrukture.",
+                  "razlaga": "Nestandardne aplikacijske storitve - oblak in družabna omrežja, masovne online igre, poraba energije in trajnostni vidiki infrastrukture (elektrike, vode – ogljični odtis)",
+                  "primer": "",
+                  "raven": "osnoven"
+                }
+              ]
+            },
+            {
+              "vsebina": "Strežniki in odjemalci, brskalnik in HTTP",
+              "cilji": [
+                {
+                  "cilj": "Dijak ve, da je protokol oblika pogovora med odjemalcem in prejemnikom sporočila (entitetni par).",
+                  "razlaga": "Strežniki in odjemalci, brskalnik in HTTP",
+                  "primer": "",
+                  "raven": "osnoven"
+                },
+                {
+                  "cilj": "Dijak zna navesti in pojasniti različne vloge in delovanje članov entitetnega para.",
+                  "razlaga": "Strežniki in odjemalci, brskalnik in HTTP",
+                  "primer": "",
+                  "raven": "osnoven"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ss-komunikacije-in-internet-kibernetska-varnost",
+          "title": "Kibernetska varnost",
+          "skupine": [
+            {
+              "vsebina": "Digitalna potrdila in šifriranje v aplikacijskih storitvah",
+              "cilji": [
+                {
+                  "cilj": "Dijak opiše pojem digitalnega potrdila in namen njegove uporabe.",
+                  "razlaga": "Digitalna potrdila in šifriranje v aplikacijskih storitvah",
+                  "primer": "",
+                  "raven": "osnoven"
+                },
+                {
+                  "cilj": "Dijak zna preveriti, ali je komunikacija med spletnim brskalnikom in spletnim strežnikom šifrirana ter parametre šifriranja.",
+                  "razlaga": "Digitalna potrdila in šifriranje v aplikacijskih storitvah",
+                  "primer": "",
+                  "raven": "osnoven"
+                },
+                {
+                  "cilj": "Dijak zna zagotoviti celovitost podatkov s podpisovanjem.",
+                  "razlaga": "Digitalna potrdila in šifriranje v aplikacijskih storitvah",
+                  "primer": "",
+                  "raven": "osnoven"
+                }
+              ]
+            },
+            {
+              "vsebina": "Osnovna varnost pri uporabi storitev na internetu",
+              "cilji": [
+                {
+                  "cilj": "Dijak osebne podatke opredeli kot bolj ali manj občutljive in prepozna tveganja pri njihovi objavi.",
+                  "razlaga": "Osnovna varnost pri uporabi storitev na internetu",
+                  "primer": "",
+                  "raven": "napreden"
+                },
+                {
+                  "cilj": "Dijak prepozna bolj in manj varne storitve.",
+                  "razlaga": "Osnovna varnost pri uporabi storitev na internetu",
+                  "primer": "",
+                  "raven": "napreden"
+                },
+                {
+                  "cilj": "Dijak prepozna različne načine avtentikacije za dostop do različnih storitev in kritično ocenjuje njihovo varnost in učinkovitost.",
+                  "razlaga": "Osnovna varnost pri uporabi storitev na internetu",
+                  "primer": "",
+                  "raven": "osnoven"
+                },
+                {
+                  "cilj": "Dijak prepozna različne tipe osebnih podatkov.",
+                  "razlaga": "Osnovna varnost pri uporabi storitev na internetu",
+                  "primer": "",
+                  "raven": "osnoven"
+                },
+                {
+                  "cilj": "Dijak se zaveda pomena izbire dobrega »močnega« gesla in navede primer zanj.",
+                  "razlaga": "Osnovna varnost pri uporabi storitev na internetu",
+                  "primer": "",
+                  "raven": "osnoven"
+                },
+                {
+                  "cilj": "Dijak utemelji pomen večfaktorske avtentikacije in njen vpliv na izboljšanje varnosti prijave.",
+                  "razlaga": "Osnovna varnost pri uporabi storitev na internetu",
+                  "primer": "",
+                  "raven": "napreden"
+                }
+              ]
+            },
+            {
+              "vsebina": "Različni tipi napadov: napadi na uporabnika in napadi na storitev",
+              "cilji": [
+                {
+                  "cilj": "Dijak pozna različne tipe napadov na storitev.",
+                  "razlaga": "Različni tipi napadov: napadi na uporabnika in napadi na storitev",
+                  "primer": "",
+                  "raven": "napreden"
+                },
+                {
+                  "cilj": "Dijak prepozna motive za krajo identitete in njihove posledice.",
+                  "razlaga": "Različni tipi napadov: napadi na uporabnika in napadi na storitev",
+                  "primer": "",
+                  "raven": "osnoven"
+                }
+              ]
+            },
+            {
+              "vsebina": "Zagotavljanje zanesljivosti in zaščita podatkov",
+              "cilji": [
+                {
+                  "cilj": "Dijak prepozna, da napade lahko do neke mere preprečimo ali omilimo s tehničnimi ukrepi.",
+                  "razlaga": "Zagotavljanje zanesljivosti in zaščita podatkov",
+                  "primer": "",
+                  "raven": "osnoven"
+                },
+                {
+                  "cilj": "Dijak se zaveda pomena zanesljivega delovanja storitve in pozna ukrepe, s katerim lahko zanesljivost zvišujemo.",
+                  "razlaga": "Zagotavljanje zanesljivosti in zaščita podatkov",
+                  "primer": "",
+                  "raven": "napreden"
+                },
+                {
+                  "cilj": "Dijak zna zakriti podatke s šifriranjem.",
+                  "razlaga": "Zagotavljanje zanesljivosti in zaščita podatkov",
+                  "primer": "",
+                  "raven": "osnoven"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
   ]
 };

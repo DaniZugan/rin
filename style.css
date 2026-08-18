@@ -992,6 +992,9 @@ img{max-width:100%;display:block}
 .catalog-theme-obd3{
   background:linear-gradient(135deg,#eef1f5 0%,#d5dce6 100%);
 }
+.catalog-theme-ss{
+  background:linear-gradient(135deg,#f0e6ff 0%,#cfb3ff 100%);
+}
 .catalog-page-head{
   margin-bottom:1.5rem;
 }
@@ -1192,6 +1195,9 @@ img{max-width:100%;display:block}
   grid-template-columns:1fr 1fr;
   gap:.85rem;
   padding:0 1.1rem 1.1rem;
+}
+.goal-detail-grid-single{
+  grid-template-columns:1fr;
 }
 .goal-detail{
   background:#f8fbff;

@@ -242,7 +242,7 @@ if (catalogRoot && window.KATALOG_ZNANJA) {
   const currentSklop = catalogRoot.querySelector('#catalogCurrentSklop');
   const currentPodsklop = catalogRoot.querySelector('#catalogCurrentPodsklop');
   const currentMeta = catalogRoot.querySelector('#catalogCurrentMeta');
-  const periods = ['OBDP', 'OBD1', 'OBD2', 'OBD3'];
+  const periods = ['OBDP', 'OBD1', 'OBD2', 'OBD3', 'SS'];
   const periodMeta = {
     OBDP: {
       label: 'PO',
@@ -275,6 +275,14 @@ if (catalogRoot && window.KATALOG_ZNANJA) {
       logoAlt: 'Logotip projekta MARiNKA',
       projectUrl: 'marinka.html',
       projectLabel: 'Več o projektu MARiNKA',
+    },
+    SS: {
+      label: 'Srednja šola',
+      title: 'srednjo šolo',
+      logo: 'assets/Slike/logo-katarina.png',
+      logoAlt: 'Logotip projekta KataRINa',
+      projectUrl: 'katarina.html',
+      projectLabel: 'Več o projektu KataRINa',
     },
   };
 
@@ -381,7 +389,7 @@ if (catalogRoot && window.KATALOG_ZNANJA) {
 
   const renderPeriodMeta = () => {
     const meta = periodMeta[activePeriod];
-    catalogRoot.classList.remove('catalog-theme-obdp', 'catalog-theme-obd1', 'catalog-theme-obd2', 'catalog-theme-obd3');
+    catalogRoot.classList.remove('catalog-theme-obdp', 'catalog-theme-obd1', 'catalog-theme-obd2', 'catalog-theme-obd3', 'catalog-theme-ss');
     catalogRoot.classList.add(`catalog-theme-${activePeriod.toLowerCase()}`);
     pageTitle.textContent = meta.title;
     pageLogo.src = meta.logo;
@@ -423,26 +431,33 @@ if (catalogRoot && window.KATALOG_ZNANJA) {
     currentMeta.textContent = contentText;
     currentMeta.hidden = !contentText;
 
-    goals.innerHTML = podsklop.skupine.flatMap((skupina) => skupina.cilji).map((cilj) => `
-      <details class="goal-card">
-        <summary>
-          <span class="goal-summary-content">
-            <span class="goal-card-eyebrow">Učni cilj</span>
-            <span class="goal-title">${renderCatalogText(cilj.cilj, '', { summaryMedia: true })}</span>
-          </span>
-        </summary>
-        <div class="goal-detail-grid">
-          <div class="goal-detail">
-            <h4>Razlaga</h4>
-            <div class="goal-rich-text">${renderCatalogText(cilj.razlaga, 'Razlaga ni dodana.')}</div>
+    goals.innerHTML = podsklop.skupine.flatMap((skupina) => skupina.cilji).map((cilj) => {
+      const primer = String(cilj.primer || '').trim();
+      const showPrimer = activePeriod !== 'SS' || (primer && primer !== '/');
+
+      return `
+        <details class="goal-card">
+          <summary>
+            <span class="goal-summary-content">
+              <span class="goal-card-eyebrow">Učni cilj</span>
+              <span class="goal-title">${renderCatalogText(cilj.cilj, '', { summaryMedia: true })}</span>
+            </span>
+          </summary>
+          <div class="goal-detail-grid${showPrimer ? '' : ' goal-detail-grid-single'}">
+            <div class="goal-detail">
+              <h4>Razlaga</h4>
+              <div class="goal-rich-text">${renderCatalogText(cilj.razlaga, 'Razlaga ni dodana.')}</div>
+            </div>
+            ${showPrimer ? `
+              <div class="goal-detail">
+                <h4>Primeri</h4>
+                <div class="goal-rich-text">${renderCatalogText(cilj.primer, 'Primeri niso dodani.')}</div>
+              </div>
+            ` : ''}
           </div>
-          <div class="goal-detail">
-            <h4>Primeri</h4>
-            <div class="goal-rich-text">${renderCatalogText(cilj.primer, 'Primeri niso dodani.')}</div>
-          </div>
-        </div>
-      </details>
-    `).join('');
+        </details>
+      `;
+    }).join('');
   };
 
   nav.addEventListener('click', (event) => {
