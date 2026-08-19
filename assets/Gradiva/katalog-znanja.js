@@ -1964,11 +1964,11 @@ window.KATALOG_ZNANJA = {
               ]
             },
             {
-              "vsebina": "Za zbiranje podatkov načrtujemo različne algoritme in orodja. Pri avtomatiziranem zbiranju podatkov se le-ti pretvarjajo v oblike, ki jih računalnik lahko obdeluje. Tako je potrebno, na primer, podatke iz analognega senzorja pretvoriti v digitalno obliko. Na metodo, ki se uporablja za avtomatizacijo zbiranja podatkov, vplivata razpoložljivost orodij in namena podatkov.",
+              "vsebina": "Za zbiranje podatkov načrtujemo različne algoritme in orodja. Pri avtomatiziranem zbiranju podatkov se le-ti pretvarjajo v oblike, ki jih računalnik lahko obdeluje. Tako je potrebno, na primer, podatke iz analognega senzorja pretvoriti v digitalno obliko. Na metodo, ki se uporablja za avtomatizacijo zbiranja podatkov, vplivata razpoložljivost orodij in namen uporabe podatkov.",
               "cilji": [
                 {
                   "cilj": "Dijak pridobiva podatke na različne načine.",
-                  "razlaga": "Za zbiranje podatkov načrtujemo različne algoritme in orodja. Pri avtomatiziranem zbiranju podatkov se le-ti pretvarjajo v oblike, ki jih računalnik lahko obdeluje. Tako je potrebno, na primer, podatke iz analognega senzorja pretvoriti v digitalno obliko. Na metodo, ki se uporablja za avtomatizacijo zbiranja podatkov, vplivata razpoložljivost orodij in namena podatkov.",
+                  "razlaga": "Za zbiranje podatkov načrtujemo različne algoritme in orodja. Pri avtomatiziranem zbiranju podatkov se le-ti pretvarjajo v oblike, ki jih računalnik lahko obdeluje. Tako je potrebno, na primer, podatke iz analognega senzorja pretvoriti v digitalno obliko. Na metodo, ki se uporablja za avtomatizacijo zbiranja podatkov, vplivata razpoložljivost orodij in namen uporabe podatkov.",
                   "primer": "",
                   "raven": "osnoven"
                 }

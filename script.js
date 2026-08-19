@@ -425,6 +425,7 @@ if (catalogRoot && window.KATALOG_ZNANJA) {
     const contentText = podsklop.skupine
       .map((skupina) => skupina.vsebina)
       .filter(Boolean)
+      .filter((vsebina, index, vsebine) => vsebine.indexOf(vsebina) === index)
       .join('\n\n');
     currentSklop.textContent = `${periodMeta[activePeriod].label} / ${sklop.title}`;
     currentPodsklop.textContent = podsklop.title;
